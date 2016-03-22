@@ -87,7 +87,7 @@ $('.doSomething').click(showMore);
 Ukoliko imate potrebu da često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
 ```javascript
 $('a').click(function(){
-    $('a').not(this).addClass('wow');
+    $('a').addClass('wow');
 });
 ```
 
@@ -96,7 +96,7 @@ Umesto toga ih jednom uhvatite i smestite u varijablu (keširajte), čime ćete 
 ```javascript
 var $a = $('a');
 $a.click(function(){
-    $a.not(this).addClass('wow');
+    $a.addClass('wow');
 });
 ```
 
