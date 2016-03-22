@@ -100,4 +100,4 @@ $a.click(function(){
 });
 ```
 
-Primećujete da `$` u nazivu varijable koristimo da naznačimo da je u pitanju jQuery objekat, a ne bilo kakva promenljiva, što je [uobičajena praksa](http://lab.abhinayrathore.com/jquery-standards/).
+Primećujete da `$` u nazivu varijable koristimo da naznačimo da je u pitanju jQuery objekat, a ne bilo kakva promenljiva, što je [de facto standard](http://lab.abhinayrathore.com/jquery-standards/).
