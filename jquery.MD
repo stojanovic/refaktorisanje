@@ -10,6 +10,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   1. [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
   2. [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
   3. [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
+  4. [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
 
 ## Postavite sktrukturu stranice
 
@@ -39,7 +40,7 @@ Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u 
 
 Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Isto važi i za parametarske objekte, koje često anonimno proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju, pored ostalih konfiguracija. Ako neka podešavanja budu trebala da se menjaju, imaćete ih sve na okupu.
+Isto važi i za [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koje proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju, pored ostalih konfiguracija. Ako neka podešavanja budu trebala da se menjaju, imaćete ih sve na okupu.
 
 (dati primer)
 
