@@ -18,7 +18,7 @@ Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici.
 /*** FUNCTIONS ***/
 ```
 
-Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika i pozivaju funkcije. Na dnu se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog *dizanja* ([hoisting](http://www.w3schools.com/js/js_hoisting.asp)). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul. 
+Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika i pozivaju funkcije. Na dnu se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog (*dizanja*) (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul. 
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
