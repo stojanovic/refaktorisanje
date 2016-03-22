@@ -22,11 +22,15 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ## Uklonite sav JS kod iz HTML-a
 
-Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici. Uklonite sav JS iz HTML-a u poseban fajl, nazovite ga po toj stranici (npr. `contact.js` ili `products.js`) i učitajte regularnim putem. Između ostalog, ovo će vam omogućiti da imate svu funkcionalnost na jednom mestu, da ne mešate više jezika u jednom fajlu, da asinhrono učitavate vaše skripte i da postepeno pređete na modularnu organizaciju projekta. Za sada, samo ih uklonite :)
+Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici. Uklonite sav JS iz HTML-a u poseban fajl, nazovite ga po toj stranici (npr. `contact.js` ili `products.js`) i učitajte regularnim putem. Između ostalog, ovo će vam omogućiti da imate svu funkcionalnost na jednom mestu, da ne mešate više jezika u jednom fajlu, da asinhrono učitavate vaše skripte i da postepeno pređete na modularnu organizaciju projekta.
+
+Pored velikih JS blokova koji se nalaze unutar `script` tagova, često unutar HTML-a imate i regularne pozive JS funkcija. Uklonite i to, iz gore navedenih razloga. Dakle, ako ste imali:
 
 ```html
 <div onclick="showMore()">Show more!</a>
 ```
+
+Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto je osnovna namena te klase da je "gađa" JS, a ne stilizovanje, eksplicirajte to u njenom nazivu. Možete smisliti bilo koju konvenciju, ja predlažem `js-` ispred naziva klase:
 
 ```html
 <div class="js-show-more">Show more!</a>
