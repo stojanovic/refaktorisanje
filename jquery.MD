@@ -120,7 +120,20 @@ function postResponse (err, response, body) {
   statusMessage.value = body
 }
 ```
-Gornji kod možemo još dodatno uprostiti imenovanjem anonimnog parametarskog objekta:
+Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta:
+
+## Imenujte anonimne parametarske objekte
+
+```javascript
+function formSubmit (e) {
+  var name = document.querySelector('input').value
+  request({
+    uri: "http://example.com/upload",
+    body: name,
+    method: "POST"
+  }, postResponse)
+}
+```
 
 ```javascript
 var postParams = {
