@@ -1,6 +1,6 @@
 # Kako organizovati jQuery kod?
 
-Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroman `jQuery` fajl (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim. 
+Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroman `jQuery` fajl (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim.
 
 `jQuery` je nastao kao pomoćno sredstvo za manipulaciju `DOM`-a, nije predviđen za ogromne front-end aplikacije koje su u međuvremenu nastale. Ako se pažljivo ne organizuje, jQuery ima tendenciju da na velikim projektima postane haotičan.
 
@@ -10,7 +10,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   1. [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
   2. [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
   3. [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
-  
+
 ## Postavite sktrukturu stranice
 
 Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
@@ -23,7 +23,7 @@ Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici.
 /*** FUNCTIONS ***/
 ```
 
-Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika i pozivaju funkcije. Na dnu se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog [*dizanja*] (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul. 
+Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika i pozivaju funkcije. Na dnu se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog [*dizanja*] (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul.
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
@@ -35,7 +35,7 @@ Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite ra
 
 ## Odvojte varijable u posebnu sekciju
 
-Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. 
+Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju.
 
 Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 ## Imenujte anonimne funkcije
 
-Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog zbrkanog primera kako JavaScript iz browsera šalje AJAX zahtev serveru (preuzet sa *callbackhell.com*):
+Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog zbrkanog primera kako JavaScript iz browsera šalje AJAX zahtev serveru (preuzet sa *callbackhell* sajta):
 
 ```javascript
 var form = document.querySelector('form')
@@ -95,9 +95,49 @@ form.onsubmit = function formSubmit (submitEvent) {
 }
 ```
 
+Kao što vidite, imenovanje funkcija je veoma lako i ima brojne prednosti:
+* čini kod čitljivijim zahvaljujući opisnim nazivima funkcija
+* omogućuje nam da pomerimo funkciju u zasebnu sekciju
+* ako dođe do greške prijaviće nam aktuelnu funkciju, umesto anonimnu
+
+Sada naš program izgleda ovako:
+
+```javascript
+document.querySelector('form').onsubmit = formSubmit;
+
+function formSubmit (e) {
+  var name = document.querySelector('input').value
+  request({
+    uri: "http://example.com/upload",
+    body: name,
+    method: "POST"
+  }, postResponse)
+}
+
+function postResponse (err, response, body) {
+  var statusMessage = document.querySelector('.status')
+  if (err) return statusMessage.value = err
+  statusMessage.value = body
+}
+```
+Gornji kod možemo još dodatno uprostiti imenovanjem anonimnog parametarskog objekta:
+
+```javascript
+var postParams = {
+  uri: "http://example.com/upload",
+  body: name,
+  method: "POST"
+}
+
+function formSubmit(e) {
+  var name = document.querySelector('input').value
+  request(postParams, postResponse)
+}
+```
+
 ## Uklonite sav JavaScript iz HTML-a
 
-Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici. 
+Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici.
 
 ```html
 <script>
