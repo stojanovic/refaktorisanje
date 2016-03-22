@@ -8,7 +8,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ## Naznačite sktrukturu stranice
 
-Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici. Možda neki nisu ni potrebni, ali korisno je naznačiti mini sadržaj na početku kao putokaz:
+Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
 ```javascript
 /*** KONFIG ***/
