@@ -59,10 +59,9 @@ $(document).ready(function() {
 
 ## Imenujte anonimne funkcije
 
-http://callbackhell.com/
+Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/) ("Ne možete stići u callback pakao ako ne idete tamo"). Evo jednog zbrkanog primera kako JavaScript iz browsera šalje AJAX zahtev serveru, preuzetog sa navedenog sajta:
 
-Here is some messy browser JavaScript that uses browser-request to make an AJAX request to a server:
-
+```javascript
 var form = document.querySelector('form')
 form.onsubmit = function (submitEvent) {
   var name = document.querySelector('input').value
@@ -76,8 +75,11 @@ form.onsubmit = function (submitEvent) {
     statusMessage.value = body
   })
 }
-This code has two anonymous functions. Let's give em names!
+```
 
+Ovaj kod ima dve anonimne funkcije. Hajde da im damo imena!
+
+```javascript
 var form = document.querySelector('form')
 form.onsubmit = function formSubmit (submitEvent) {
   var name = document.querySelector('input').value
@@ -91,6 +93,8 @@ form.onsubmit = function formSubmit (submitEvent) {
     statusMessage.value = body
   })
 }
+```
+
 
 
 ```javascript
