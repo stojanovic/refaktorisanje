@@ -82,9 +82,9 @@ $('.doSomething').click(showMore);
 
 ## Lokalizujte globalne varijable
 
-## Smestite česte selektore u varijable
+## Smestite selektore u varijable
 
-Ukoliko imate potrebu da često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
+Ukoliko često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
 ```javascript
 $('a').click(function(){
     $('a').addClass('wow');
