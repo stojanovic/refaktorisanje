@@ -1,4 +1,4 @@
-# Kako organizovati jQuery kod?
+# Kako organizovati nasleđeni jQuery kod?
 ## Vodič za Front-end refaktorisanje
 
 Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroman `jQuery` fajl (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim.
@@ -192,6 +192,15 @@ Zajedno sa drugim koracima, ovo će nam pomoći da postepeno pređemo na modular
 
 ## Lokalizujte globalne varijable
 
+Ceo Javaskript fajl ćemo veoma lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
+
+```javascript
+(function() {
+    // jQuery je ovde dostupan pod alijasom $
+})();
+```
+
+
 ```javascript
 var DED = (function() {
 
@@ -214,6 +223,16 @@ var DED = (function() {
     };
 })();
 ```
+
+Ukoliko vaš modul ima neku spoljašnju zavisnost (u ovom slučaju sigurno jQuery, onda to eksplicirajte:
+
+```javascript
+(function($) {
+    // jQuery je ovde dostupan pod alijasom $
+})(jQuery);
+```
+
+Ovako prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost modula u slučaju da promeni okruženje.
 
 ## Smestite selektore u varijable
 
