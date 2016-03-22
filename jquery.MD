@@ -181,7 +181,11 @@ Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovn
 $('.doSomething').click(showMore);
 ```
 
-## Odvojte kod u zasebne fajlove
+## Podelite kod u zasebne fajlove
+
+Jedan od razloga što je JS kod tradicionalno pisan u jednom fajlu je što nije bilo [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraza. Iako `import` još uvek nije prirodno podržan u browserima, itekako ima smisla praviti manje fajlove, i učitavati ih preko nekog od brojnih učitavača modula (*module loader*) ili direktno u HTML preko script taga.
+
+
 
 ## Lokalizujte globalne varijable
 
