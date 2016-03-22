@@ -1,3 +1,3 @@
-# kodni-stil
+# Refaktorisanje
 
-Ovde ćemo pisati kodne stilove za Front-end jezike i tehnologije. Ne želimo da na frontendu bude haos.
+Kodni stilovi i saveti za refaktorisanje Front-end aplikacija, jezika i tehnologija. Ne želimo da na frontendu bude haos.
