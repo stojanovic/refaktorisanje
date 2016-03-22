@@ -6,7 +6,7 @@ Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroma
 
 Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Nakon refaktorisanja, stara i neodrživa aplikacija će moći da nastavi razvoj, a `JavaSkript` kod će biti moguće odvojiti u zasebne module.
 
-## Naznačite sktrukturu stranice
+## Napravite sktrukturu stranice
 
 Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
@@ -16,12 +16,15 @@ Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici.
 /*** LISTENERS ***/
 
 /*** FUNCTIONS ***/
-
 ```
+
+Dakle, na početku su (još uvek) globalne varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika aplikacije i pozivaju funkcije. Na samom kraju se nalaze definicije funkcija. Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul. 
+
+Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
 ## Odvojte funkcije u posebnu sekciju
 
-(na dnu)
+Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Ako premestite funkciju u drugi kontekst ona treba i dalje da radi.
 
 ## Odvojte varijable u posebnu sekciju
 
@@ -29,11 +32,19 @@ Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici.
 
 ## Odvojte event listenere u posebnu sekciju
 
+Prvi i glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i bilo čega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje nameravate da ciljate.
+
 (pri vrhu)
 
-$( document ).ready(function() {
-    console.log( "ready!" );
+```javascript
+$(document).ready(function() {
+
+    //
+
+    // svi ostali event listeneri idu unutra
+    
 });
+```
 
 ## Imenujte anonimne funkcije
 
