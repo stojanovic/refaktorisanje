@@ -30,7 +30,10 @@ Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite ra
 
 ## Odvojte varijable u posebnu sekciju
 
-(na vrhu)
+Ovo je najlakši deo, samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je na početak fajla. 
+
+Tokom ovog procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
+
 
 ## Odvojte event listenere u posebnu sekciju
 
