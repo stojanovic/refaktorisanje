@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 ## Imenujte anonimne funkcije
 
-Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog zbrkanog primera kako JavaScript iz browsera šalje AJAX zahtev serveru (preuzet sa *callbackhell* sajta):
+Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo primera zbrkanog koda, kojim JavaScript iz browsera šalje http zahtev serveru (preuzet sa *callbackhell* sajta):
 
 ```javascript
 var form = document.querySelector('form')
@@ -78,7 +78,7 @@ form.onsubmit = function (submitEvent) {
 }
 ```
 
-U kodu postoje dve anonimne funkcije. Hajde da im damo imena!
+U kodu postoje dve anonimne funkcije. Hajde da ih imenujemo:
 
 ```javascript
 var form = document.querySelector('form')
@@ -99,9 +99,9 @@ form.onsubmit = function formSubmit (submitEvent) {
 Kao što vidite, imenovanje funkcija je veoma lako i ima brojne prednosti:
 * čini kod čitljivijim zahvaljujući opisnim nazivima funkcija
 * omogućuje nam da pomerimo funkciju u zasebnu sekciju
-* ako dođe do greške prijaviće nam aktuelnu funkciju, umesto anonimnu
+* ako dođe do greške prijaviće nam aktuelnu funkciju, umesto anonimne
 
-Sada naš program izgleda ovako:
+Sada naša skripta za slanje formulara izgleda ovako:
 
 ```javascript
 document.querySelector('form').onsubmit = formSubmit;
@@ -121,7 +121,8 @@ function postResponse (err, response, body) {
   statusMessage.value = body
 }
 ```
-Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta:
+
+Ovaj kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
 
 ## Imenujte anonimne parametarske objekte
 
