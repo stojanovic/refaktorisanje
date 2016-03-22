@@ -211,3 +211,6 @@ $a.click(function(){
 ```
 
 Primećujete da `$` u nazivu varijable koristimo da naznačimo da je u pitanju jQuery objekat, a ne bilo kakva promenljiva, što je [*de facto* standard](http://lab.abhinayrathore.com/jquery-standards/).
+
+## Korisni linkovi
+http://stackoverflow.com/questions/16736483/best-way-to-organize-jquery-javascript-code-2013
