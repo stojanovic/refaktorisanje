@@ -18,7 +18,7 @@ Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici.
 /*** FUNCTIONS ***/
 ```
 
-Dakle, na početku su (još uvek) globalne varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika aplikacije i pozivaju funkcije. Na samom kraju se nalaze definicije funkcija. Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul. 
+Dakle, na početku su (još uvek) globalne varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika aplikacije i pozivaju funkcije. Na samom kraju se nalaze deklaracije funkcija, koje je moguće koristiti ranije zbog *dizanja* ([hoisting](http://www.w3schools.com/js/js_hoisting.asp)). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul. 
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
@@ -48,15 +48,53 @@ Prvi i glavni jQuery slušalac događaja je `document ready`, koji se okida kada
 ```javascript
 $(document).ready(function() {
 
-    //
-
     // svi ostali event listeneri idu unutra
-    
 });
 ```
 
 ## Imenujte anonimne funkcije
 
+http://callbackhell.com/
+
+Here is some messy browser JavaScript that uses browser-request to make an AJAX request to a server:
+
+var form = document.querySelector('form')
+form.onsubmit = function (submitEvent) {
+  var name = document.querySelector('input').value
+  request({
+    uri: "http://example.com/upload",
+    body: name,
+    method: "POST"
+  }, function (err, response, body) {
+    var statusMessage = document.querySelector('.status')
+    if (err) return statusMessage.value = err
+    statusMessage.value = body
+  })
+}
+This code has two anonymous functions. Let's give em names!
+
+var form = document.querySelector('form')
+form.onsubmit = function formSubmit (submitEvent) {
+  var name = document.querySelector('input').value
+  request({
+    uri: "http://example.com/upload",
+    body: name,
+    method: "POST"
+  }, function postResponse (err, response, body) {
+    var statusMessage = document.querySelector('.status')
+    if (err) return statusMessage.value = err
+    statusMessage.value = body
+  })
+}
+
+
+```javascript
+$('#button').click(function() {
+    $('#label').method();
+    $('#label').method2();
+    $('#label').css('background-color', 'red');
+});
+```
 
 ## Uklonite sav JavaScript iz HTML-a
 
