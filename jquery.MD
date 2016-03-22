@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 ## Imenujte anonimne funkcije
 
-Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog zbrkanog primera kako JavaScript iz browsera šalje AJAX zahtev serveru, preuzetog sa navedenog sajta:
+Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog zbrkanog primera kako JavaScript iz browsera šalje AJAX zahtev serveru (preuzet sa *callbackhell* sajta):
 
 ```javascript
 var form = document.querySelector('form')
