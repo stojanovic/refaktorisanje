@@ -30,7 +30,7 @@ Pored velikih JS blokova koji se nalaze unutar `script` tagova, često unutar HT
 <div onclick="showMore()">Show more!</a>
 ```
 
-Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete smisliti bilo koju konvenciju, ja predlažem `js-` ispred naziva klase:
+Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te CSS klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete smisliti bilo koju konvenciju, ja predlažem `js-` ispred naziva klase:
 
 ```html
 <div class="js-show-more">Show more!</a>
