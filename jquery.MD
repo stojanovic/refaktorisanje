@@ -35,7 +35,7 @@ Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite ra
 
 ## Odvojte varijable u posebnu sekciju
 
-Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju.
+Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje hvataju HTML elemente, njih stavite unutar `document ready` event listenera.
 
 Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
