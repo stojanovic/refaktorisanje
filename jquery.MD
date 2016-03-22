@@ -1,6 +1,6 @@
 # Kako organizovati jQuery kod?
 
-Ukoliko ste ikad u radili kao Front-end developer u nekoj firmi, verovatno ste naišli na ogroman jQuery fajl (obično main.js), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, tako da ceo kod ispada manje-više hronološki. Takav fajl brzo naraste na par stotina (čak i par hiljada) linija koda, pa je veoma teško izboriti se sa njim. 
+Ukoliko ste radili kao Front-end developer u nekoj firmi, verovatno ste naišli na ogroman jQuery fajl (obično main.js), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, tako da ceo kod ispada manje-više hronološki. Takav fajl brzo naraste na par stotina (čak i par hiljada) linija koda, pa je veoma teško izboriti se sa njim. 
 
 jQuery je nastao kao pomoćno sredstvo za manipulaciju DOM-a, nije predviđen za ogromne front-end aplikacije koje su u međuvremenu nastale. Ako se pažljivo ne organizuje, jQuery ima tendenciju da na velikim projektima postane haotičan.
 
