@@ -6,6 +6,7 @@ Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroma
 
 Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Nakon refaktorisanja, stara i neodrživa aplikacija će moći da nastavi razvoj, a `JavaSkript` kod će biti moguće odvojiti u zasebne module i prevesti u ES6.
 
+## Sadržaj
   1. [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
   2. [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
   3. [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
