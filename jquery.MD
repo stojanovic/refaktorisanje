@@ -20,7 +20,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 (pri vrhu)
 
-## Uklonite sav JS kod iz HTML-a
+## Uklonite sav JavaScript iz HTML-a
 
 Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici. Uklonite sav JS iz HTML-a u poseban fajl, nazovite ga po toj stranici (npr. `contact.js` ili `products.js`) i učitajte regularnim putem. Između ostalog, ovo će vam omogućiti da imate svu funkcionalnost na jednom mestu, da ne mešate više jezika u jednom fajlu, da asinhrono učitavate vaše skripte i da postepeno pređete na modularnu organizaciju projekta.
 
