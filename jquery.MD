@@ -6,7 +6,18 @@ Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroma
 
 Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Nakon refaktorisanja, stara i neodrživa aplikacija će moći da nastavi razvoj, a `JavaSkript` kod će biti moguće odvojiti u zasebne module.
 
-## Imenujte anonimne funkcije
+## Naznačite sktrukturu stranice
+
+Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici. Možda neki nisu ni potrebni, ali korisno je naznačiti mini sadržaj na početku kao putokaz:
+
+```javascript
+/*** KONFIG ***/
+
+/*** LISTENERS ***/
+
+/*** FUNCTIONS ***/
+
+```
 
 ## Odvojte funkcije u posebnu sekciju
 
@@ -19,6 +30,13 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 ## Odvojte event listenere u posebnu sekciju
 
 (pri vrhu)
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+
+## Imenujte anonimne funkcije
+
 
 ## Uklonite sav JavaScript iz HTML-a
 
