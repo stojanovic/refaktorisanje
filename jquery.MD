@@ -192,7 +192,7 @@ Zajedno sa drugim koracima, ovo će nam pomoći da postepeno pređemo na modular
 
 ## Lokalizujte globalne varijable
 
-Ceo Javaskript fajl ćemo veoma lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
+Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
 ```javascript
 (function() {
@@ -200,6 +200,7 @@ Ceo Javaskript fajl ćemo veoma lako lokalizovati tako što ćemo ga zatvoriti u
 })();
 ```
 
+Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet. Ako nam je nešto ipak potrebno, moramo to izvesti van:
 
 ```javascript
 var DED = (function() {
