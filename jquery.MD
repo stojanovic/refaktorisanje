@@ -34,6 +34,10 @@ Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u 
 
 Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
+Isto važi i za parametarske objekte, koje često anonimno proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju, pored ostalih konfiguracija. Ako neka podešavanja budu trebala da se menjaju, imaćete ih sve na okupu.
+
+(dati primer)
+
 
 ## Odvojte event listenere u posebnu sekciju
 
