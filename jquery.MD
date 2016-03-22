@@ -192,6 +192,29 @@ Zajedno sa drugim koracima, ovo će nam pomoći da postepeno pređemo na modular
 
 ## Lokalizujte globalne varijable
 
+```javascript
+var DED = (function() {
+
+    var private_var;
+
+    function private_method()
+    {
+        // do stuff here
+    }
+
+    return {
+        method_1 : function()
+            {
+                // do stuff here
+            },
+        method_2 : function()
+            {
+                // do stuff here
+            }
+    };
+})();
+```
+
 ## Smestite selektore u varijable
 
 Ukoliko često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
