@@ -26,5 +26,5 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ## Lokalizujte globalne varijable
 
-## Smestite često korišćene selektore u varijable
+## Smestite česte selektore u varijable
 
