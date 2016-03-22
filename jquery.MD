@@ -163,7 +163,7 @@ function formSubmit(e) {
 </script>
 ```
 
-Uklonite sav JS iz HTML-a u poseban fajl, nazovite ga po toj stranici (npr. `contact.js` ili `products.js`) i učitajte regularnim putem. Između ostalog, ovo će vam omogućiti da imate svu funkcionalnost na jednom mestu, da ne mešate više jezika u jednom fajlu, da asinhrono učitavate vaše skripte i da postepeno pređete na modularnu organizaciju projekta.
+Uklonite sav JS iz HTML-a u posebne fajlove nazvane po stranici sa koje su uklonjeni (npr. `contact.js` ili `products.js`) i učitajte ih regularnim putem. Između ostalog, ovo će nam omogućiti da imamo svu funkcionalnost na jednom mestu, da ne mešamo više jezika u jednom fajlu, da asinhrono učitavamo skripte i da postepeno pređemo na modularnu arhitekturu.
 
 Pored velikih JS blokova koji se nalaze unutar `script` tagova, često imate i *inline* pozive JS funkcija. Uklonite i sve to, iz gore navedenih razloga. Dakle, ako ste imali:
 
@@ -183,9 +183,11 @@ $('.doSomething').click(showMore);
 
 ## Podelite kod u zasebne fajlove
 
-Jedan od razloga što je JS kod tradicionalno pisan u jednom fajlu je što nije bilo [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraza. Iako `import` još uvek nije prirodno podržan u browserima, itekako ima smisla praviti manje fajlove, i učitavati ih preko nekog od brojnih učitavača modula (*module loader*) ili direktno u HTML preko script taga.
+Podelite glavni Javaskript fajl u zasebne fajlove, nazvane po stranicama ili delovima stranica za koje su zaduženi (npr. `contact.js` ili `products.js` za stranice, odnosno `header.js` ili `slider.js` za delove). U glavnom fajlu ostavite samo ono što je zajedničko za više stranica, odnosno prikaza ako je u pitanju jednostranična aplikacija.
 
+Obzirom da [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) još uvek nije prirodno podržan, učitajte fajlove preko nekog učitavača modula (*module loader*) ili direktno u HTML preko script taga.
 
+Zajedno sa drugim koracima, ovo će nam pomoći da postepeno pređemo na modularnu organizaciju projekta.
 
 ## Lokalizujte globalne varijable
 
