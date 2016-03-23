@@ -186,7 +186,7 @@ $('.doSomething').click(showMore);
 
 ![alt text](http://i.stack.imgur.com/YaaJ6.png)
 
-Podelite glavni Javaskript fajl u zasebne fajlove, nazvane po stranicama ili delovima stranica za čiju su funkcionalnost zaduženi (npr. `contact.js` ili `products.js` za stranice, odnosno `header.js` ili `slider.js` za delove). U glavnom fajlu ostavite samo zajedničku funkcionalnost.
+Podelite glavni Javaskript fajl u zasebne fajlove, nazvane po logičkim celinama za čiju funkcionalnost su zaduženi (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost.
 
 Podela briga će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo na toj stranici. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
 
