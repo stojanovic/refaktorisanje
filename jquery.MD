@@ -241,7 +241,7 @@ Ovako prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koris
 
 Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). Skripte se na taj način učitavaju istovremeno, umesto jedna za drugom, ali se takođe izvršavaju bez ikakvog reda.
 
-Postoji gomila rešenja za asinhrono učitavanje modula (npr. RequireJS, CommonJS...), a možete sve to rešiti i ručno. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih modula zavisi naša skripta, pa se kod izvršava tek nakon što se zavisnosti očitaju (npr. ako je za skriptu neophodan jQuery, izvršiće se nakon što se jQuery učita).
+Obzirom da [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) u Javaskriptu još uvek nije prirodno podržan, postoji gomila rešenja za učitavanje modula (npr. RequireJS, CommonJS, Webpack...), a možete sve to rešiti i ručno. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih modula zavisi naša skripta, pa se kod izvršava nakon što se zavisnosti učitaju (npr. ako je za skriptu neophodan jQuery, izvršiće se nakon što se jQuery učita).
 
 ## Smestite selektore u varijable
 
