@@ -184,11 +184,11 @@ $('.doSomething').click(showMore);
 
 ## Podelite kod u zasebne fajlove
 
-Podelite glavni Javaskript fajl u zasebne fajlove, nazvane po stranicama ili delovima stranica za koje su zaduženi (npr. `contact.js` ili `products.js` za stranice, odnosno `header.js` ili `slider.js` za delove). U glavnom fajlu ostavite samo ono što je zajedničko za više stranica, odnosno prikaza ako je u pitanju jednostranična aplikacija.
+![alt text](http://i.stack.imgur.com/YaaJ6.png)
 
-Obzirom da [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) još uvek nije prirodno podržan, učitajte fajlove preko nekog učitavača modula (*module loader*) ili direktno u HTML preko script taga. Skripte specifične za neku stranicu učitavamo samo na toj stranici.
+Podelite glavni Javaskript fajl u zasebne fajlove, nazvane po stranicama ili delovima stranica za čiju su funkcionalnost zaduženi (npr. `contact.js` ili `products.js` za stranice, odnosno `header.js` ili `slider.js` za delove). U glavnom fajlu ostavite samo zajedničku funkcionalnost.
 
-Zajedno sa drugim koracima, ovo će nam pomoći da postepeno pređemo na modularnu organizaciju projekta.
+Podela briga će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo na toj stranici. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
 
 ## Lokalizujte globalne varijable
 
