@@ -243,6 +243,40 @@ Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporuč
 
 Postoji gomila rešenja koje regulišu [učitavanje](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) modula (npr. RequireJS, CommonJS, Webpack...), a možete sve to rešiti i ručno. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek kad se zavisnosti učitaju (npr. ako je za skriptu neophodan jQuery, izvršiće se nakon što se jQuery učita).
 
+## Organizujte povezane varijable u objekte
+
+http://12devsofxmas.co.uk/2014/01/day-8-architecting-your-front-end-javascript/
+
+A typical JavaScript file might be strewn with global variables and methods:
+```javascript
+var height = 20;
+var width = 50;
+var x = 0;
+var moveToNextItem = function() { /* snip */ }
+var startAccordion = function() { /* snip */ }
+```
+
+incredibly difficult to tell what’s going on, which functions affect which variables and which code is related, and which are entirely different parts of your app. Objects can help:
+
+```javascript
+var accordion = {
+    currentItem: 1,
+    domElem: $("#accordion"),
+    startAccordion: function() { /* snip */ },
+    isAtEnd: function() { /* snip */ }
+    // and so on
+};
+
+var carousel = {
+    currentItem: 1,
+    domElem: $("#carousel"),
+    transition: function() { /* snip */ }
+    // and so on
+};
+```
+
+Immediately, with very little extra typing or effort, code is nicely contained, and it becomes easily apparent what each part of the code does.
+
 ## Smestite selektore u varijable
 
 Ukoliko često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
