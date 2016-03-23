@@ -123,7 +123,9 @@ function postResponse (err, response, body) {
 }
 ```
 
-Ovaj kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
+Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada treba da ostanu anonimne, ali to treba eksplicirati tako što ćemo ih prevesti u [streličaste funkcije](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
 
 ## Imenujte anonimne parametarske objekte
 
