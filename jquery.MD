@@ -235,6 +235,10 @@ Ukoliko vaš modul ima neku spoljašnju zavisnost (u ovom slučaju sigurno jQuer
 
 Ovako prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost modula u slučaju da promeni okruženje.
 
+## Učitavajte skripte asinhrono
+
+Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). U Javaskript svetu postoji gomila rešenja za asinhrono učitavanje modula (npr. RequireJS, CommonJS...), a možete sve to rešiti i ručno. Asinhrono učitavanje modula nam omogućava da eksplicitno navedemo od kojih modula zavisi naša skripta, pa će se kod izvršiti tek nakon što se sve zavisnosti očitaju. Na primer, ako za neku skriptu navedeš da joj je neophodan jQuery, njen kod će se izvršiti nakon što se jQuery učita.
+
 ## Smestite selektore u varijable
 
 Ukoliko često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
