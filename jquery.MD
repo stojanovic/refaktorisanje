@@ -237,7 +237,8 @@ Ovako prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koris
 
 ## Učitavajte skripte asinhrono
 
-![asinhrono učitavanje modula](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg "Razlika između blokirajućeg i asinhronog učitavanja modula")
+![](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg)
+*Razlika između blokirajućeg i asinhronog učitavanja JS modula*
 
 Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). Skripte se na taj način učitavaju istovremeno, umesto jedna za drugom, ali se takođe izvršavaju bez ikakvog reda.
 
