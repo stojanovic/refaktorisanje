@@ -117,7 +117,7 @@ $(document).on('click', '.book-description', function(){
 });
 ```
 
-Ukoliko celu logiku stavljamo u `document ready`, javascript fajl nam veoma brzo postane jedno veliko *jQuery crevo*.
+Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*.
 
 ## Organizujte funkcije u posebnu sekciju
 
