@@ -8,14 +8,14 @@ Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroma
 Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Nakon refaktorisanja, stara i neodrživa aplikacija će moći da nastavi razvoj, a `JavaSkript` kod će biti moguće odvojiti u zasebne module i prevesti u ES6.
 
 ## Sadržaj
-  * [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
-  * [Organizujte varijable u posebnu sekciju](#organizujte-varijable-u-posebnu-sekciju)
-  * [Organizujte event listenere u posebnu sekciju](#organizujte-event-listenere-u-posebnu-sekciju)
-  * [Organizujte funkcije u posebnu sekciju](#organizujte-funkcije-u-posebnu-sekciju)
-  * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
-  * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
+  * [Postavimo sktrukturu stranice](#postavimo-sktrukturu-stranice)
+  * [Organizujmo varijable u posebnu sekciju](#organizujmo-varijable-u-posebnu-sekciju)
+  * [Organizujmo event listenere u posebnu sekciju](#organizujmo-event-listenere-u-posebnu-sekciju)
+  * [Organizujmo funkcije u posebnu sekciju](#organizujmo-funkcije-u-posebnu-sekciju)
+  * [Imenujmo anonimne funkcije](#imenujmo-anonimne-funkcije)
+  * [Imenujmo anonimne parametarske objekte](#imenujmo-anonimne-parametarske-objekte)
 
-## Postavite sktrukturu stranice
+## Postavimo sktrukturu stranice
 
 Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
@@ -33,13 +33,13 @@ Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, 
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG' width='400'>
 
-## Organizujte varijable u posebnu sekciju
+## Organizujmo varijable u posebnu sekciju
 
 Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` eventa.
 
 Ukoliko primetite da neke varijable ne treba da budu globalne nego lokalne, smestite ih u odgovarajući opseg. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Ukoliko nađete [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koji se prosleđuju funkcijama, imenujte ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
+Ukoliko nađete [anonimne parametarske objekte](#imenujmo-anonimne-parametarske-objekte), koji se prosleđuju funkcijama, imenujmo ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
 
 ```javascript
 /*** KONFIG ***/
@@ -51,7 +51,7 @@ var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bu
 
 ```
 
-## Organizujte event listenere u posebnu sekciju
+## Organizujmo event listenere u posebnu sekciju
 
 `document ready` je glavni jQuery slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i ostalog što se učitava naknadno). Ovaj event nam jemči da će u trenutku izvršenja Javaskripta biti spremni svi HTML elementi.
 
@@ -120,7 +120,7 @@ $(document).on('click', '.book-description', function(){
 
 Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*.
 
-## Organizujte funkcije u posebnu sekciju
+## Organizujmo funkcije u posebnu sekciju
 
 Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti. Sada naš odeljak sa funkcijama izgleda ovako:
 
@@ -142,7 +142,7 @@ function toRadians (angle) {
 
 Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona i dalje treba da radi.
 
-## Imenujte anonimne funkcije
+## Imenujmo anonimne funkcije
 
 Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog primera zbrkanog koda (sa callbackhell.com), kojim se iz browsera šalje http zahtev serveru:
 
@@ -180,9 +180,9 @@ form.onsubmit = function formSubmit (submitEvent) {
 }
 ```
 
-Kao što vidite, imenovanje funkcija je veoma lako i ima brojne prednosti:
-* čini kod čitljivijim zahvaljujući opisnim nazivima funkcija
-* omogućuje nam da pomerimo funkciju u zasebnu sekciju
+Kao što vidite, imenovanje funkcija je lako i ima brojne prednosti:
+* čini kod čitljivijim zahvaljujući opisnom nazivu funkcija
+* omogućuje nam da pomerimo funkciju gde želimo
 * ako dođe do greške prijaviće nam aktuelnu funkciju, umesto anonimne
 
 Sada naša skripta za slanje formulara izgleda ovako:
@@ -210,7 +210,7 @@ Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada tr
 
 Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
 
-## Imenujte anonimne parametarske objekte
+## Imenujmo anonimne parametarske objekte
 
 ```javascript
 function formSubmit (e) {
