@@ -52,9 +52,9 @@ var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bu
 
 ## Organizujte event listenere u posebnu sekciju
 
-Glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i svega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje ciljamo.
+`document ready` je glavni jQuery slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i ostalog što se učitava naknadno). Ovaj event nam jemči da će u trenutku izvršenja Javaskripta biti spremni svi HTML elementi.
 
-Niži event listeneri obično idu unutar njega. Ako ih ostavimo izvan rizikujemo da DOM koji ciljaju još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu ići zasebno, jer su oni nezavisni.
+Niži slušači događaja obično idu unutar njega. Ako ih ostavimo izvan rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu ići zasebno, jer su nezavisni:
 
 
 ```javascript
@@ -80,7 +80,7 @@ $(window).resize(function() {
 });
 ```
 
-Postoji i drugo rešenje kako da vežemo događaj za element koji još uvek ne postoji. Ako na primer hoćemo da vežemo klik event za klasu `.should-hide`, koja trenutno ne postoji u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
+Postoji i drugo rešenje kako da vežemo događaj za element koji još uvek ne postoji. Ako, na primer, hoćemo da vežemo klik event za klasu `.should-hide`, koja trenutno ne postoji u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
 $('.should-hide').on('click', function() {
@@ -118,7 +118,7 @@ $(document).on('click', '.book-description', function(){
 });
 ```
 
-Ukoliko celu logiku stavljamo u `document ready`, Javascript fajl nam veoma brzo postane jedno veliko *jQuery crevo*.
+Ukoliko celu logiku stavljamo u `document ready`, javascript fajl nam veoma brzo postane jedno veliko *jQuery crevo*.
 
 ## Organizujte funkcije u posebnu sekciju
 
