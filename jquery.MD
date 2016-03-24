@@ -19,7 +19,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
 ```javascript
-/*** VARIABLES ***/
+/*** KONFIG ***/
 
 /*** LISTENERS ***/
 
@@ -30,16 +30,23 @@ Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
+![](https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG)
+
 ## Odvojte varijable u posebnu sekciju
 
-Pretražite čitav fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od HTML elemenata, njih stavite unutar `document ready` event listenera.
+Pretražite čitav fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` listenera.
 
-Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
+Tokom refaktorisanja, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite u pripadajući opseg. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Isto važi i za [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koje proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju, pored ostalih konfiguracija. Ako neka podešavanja budu trebala da se menjaju, imaćete ih sve na okupu.
+Isto važi i za [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koje proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
 
-(dati primer)
+```javascript
+/*** KONFIG ***/
+var title = "Refactoring jQuery";
+var currentSpeed = 0;
+var MAX_SPEED = 256;
 
+```
 
 ## Odvojte event listenere u posebnu sekciju
 
