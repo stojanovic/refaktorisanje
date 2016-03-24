@@ -80,7 +80,7 @@ $(window).resize(function() {
 });
 ```
 
-Ako ne želimo da gomilamo listenere u `document ready`, jQuery omogućuje da vežemo događaj za element koji još uvek ne postoji. Ako na primer hoćemo da vežemo klik event za klasu `.should-hide`, koja trenutno ne postoji u HTML-u:
+Postoji i drugo rešenje kako da vežemo događaj za element koji još uvek ne postoji. Ako na primer hoćemo da vežemo klik event za klasu `.should-hide`, koja trenutno ne postoji u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
 $('.should-hide').on('click', function() {
@@ -88,7 +88,7 @@ $('.should-hide').on('click', function() {
 });
 ```
 
-Čak ni nakon što ciljana klasa bude dodata u DOM, klik neće raditi. Međutim, ako vežemo klik za globalni `document` objekat, kad on bude kliknut delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
+Međutim, ako vežemo klik za globalni `document` objekat, kad on bude kliknut delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
 
 ```javascript
 $(document).on('click', '.should-hide', function(){
