@@ -96,7 +96,7 @@ $(document).on('click', '.should-hide', function(){
 });
 ```
 
-Kada na stranici ima puno događaja, ja preferiram drugo rešenje jer time izbegavamo stepeničastu strukturu koda i grupišemo događaje po vrsti, npr:
+Između ova dva modela, ja preporučujem drugo rešenje jer time izbegavamo stepeničastu strukturu koda:
 
 ```javascript
 /*** LISTENERS ***/
@@ -116,8 +116,9 @@ $(document).on('click', '.should-hide', function(){
 $(document).on('click', '.book-description', function(){
 	$('.book').fadeIn('slow');
 });
-
 ```
+
+Ukoliko celu logiku stavljamo u `document ready`, Javascript fajl nam veoma brzo postane jedno veliko *jQuery crevo*.
 
 ## Organizujte funkcije u posebnu sekciju
 
