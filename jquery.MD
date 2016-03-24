@@ -87,7 +87,7 @@ $('.should-hide').on('click', function() {
 });
 ```
 
-Međutim, ako vežemo klik za globalni `document` objekat, kad on bude kliknut delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
+Međutim, ako vežemo klik za globalni `document` objekat (koji je dostupan sve vreme), kad on bude kliknut, delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
 
 ```javascript
 $(document).on('click', '.should-hide', function(){
