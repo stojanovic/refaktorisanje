@@ -8,10 +8,10 @@ Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroma
 Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Nakon refaktorisanja, stara i neodrživa aplikacija će moći da nastavi razvoj, a `JavaSkript` kod će biti moguće odvojiti u zasebne module i prevesti u ES6.
 
 ## Sadržaj
-  1. [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
-  2. [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
-  3. [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
-  4. [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
+  * [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
+  * [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
+  * [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
+  * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
 
 ## Postavite sktrukturu stranice
 
@@ -32,6 +32,17 @@ Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, 
 ## Odvojte funkcije u posebnu sekciju
 
 Pretražite fajl i odvojte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti.
+
+```javascript
+/*** FUNCTIONS ***/
+function doThat() {
+  
+}
+
+function doThis() {
+  
+}
+```
 
 Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona treba i dalje da radi.
 
