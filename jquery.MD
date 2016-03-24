@@ -30,7 +30,7 @@ Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FS_Clem_engine.jpg" width="400">
+<img src='https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG' width='400'>
 
 ## Odvojte varijable u posebnu sekciju
 
@@ -42,22 +42,56 @@ Ukoliko nađete [anonimne parametarske objekte](#imenujte-anonimne-parametarske-
 
 ```javascript
 /*** KONFIG ***/
-var title = "Refactoring jQuery";
+
+var title = 'Refactoring jQuery';
 var currentSpeed = 0;
 var MAX_SPEED = 256;
+var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bude spreman
 
 ```
 
 ## Odvojte event listenere u posebnu sekciju
 
-Prvi i glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i bilo čega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje nameravate da ciljate.
+Glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i svega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje ciljamo.
 
-(pri vrhu)
+Niži event listeneri obično idu unutar njega. Ako ih ostavimo izvan rizikujemo da DOM koji ciljaju još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu ići zasebno, jer su oni nezavisni.
+
 
 ```javascript
+/*** LISTENERS ***/
+
 $(document).ready(function() {
 
-    // svi ostali event listeneri idu unutra
+    $table = $('#table');
+
+    $('.should-hide').click(function(){
+        $(this).hide();
+    });
+
+    $('.book-description').click(function() {
+      $('.book').fadeIn('slow');
+    });
+
+});
+
+
+$(window).resize(function() {
+  resizeThePage();
+});
+```
+
+U jQuery zajednici se razvio obrazac koji rešava problem dodavanja listenera na element koji još uvek ne postoji. Umesto da ciljamo klasu `.should-hide` koja možda još nije dodata:
+
+```javascript
+$('.should-hide').click(function(){
+    $(this).hide();
+});
+```
+
+Možemo ciljati globalni `document` objekat, pa kad on bude kliknut uradiće nešto sa potčinjenom klasom:
+```javascript
+$(document).click(function(){
+    $('.should-hide').hide();
 });
 ```
 
@@ -92,9 +126,9 @@ var form = document.querySelector('form')
 form.onsubmit = function (submitEvent) {
   var name = document.querySelector('input').value
   request({
-    uri: "http://example.com/upload",
+    uri: 'http://example.com/upload',
     body: name,
-    method: "POST"
+    method: 'POST'
   }, function (err, response, body) {
     var statusMessage = document.querySelector('.status')
     if (err) return statusMessage.value = err
@@ -110,9 +144,9 @@ var form = document.querySelector('form')
 form.onsubmit = function formSubmit (submitEvent) {
   var name = document.querySelector('input').value
   request({
-    uri: "http://example.com/upload",
+    uri: 'http://example.com/upload',
     body: name,
-    method: "POST"
+    method: 'POST'
   }, function postResponse (err, response, body) {
     var statusMessage = document.querySelector('.status')
     if (err) return statusMessage.value = err
@@ -134,9 +168,9 @@ document.querySelector('form').onsubmit = formSubmit;
 function formSubmit (e) {
   var name = document.querySelector('input').value
   request({
-    uri: "http://example.com/upload",
+    uri: 'http://example.com/upload',
     body: name,
-    method: "POST"
+    method: 'POST'
   }, postResponse)
 }
 
@@ -157,18 +191,18 @@ Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarsko
 function formSubmit (e) {
   var name = document.querySelector('input').value
   request({
-    uri: "http://example.com/upload",
+    uri: 'http://example.com/upload',
     body: name,
-    method: "POST"
+    method: 'POST'
   }, postResponse)
 }
 ```
 
 ```javascript
 var postParams = {
-  uri: "http://example.com/upload",
+  uri: 'http://example.com/upload',
   body: name,
-  method: "POST"
+  method: 'POST'
 }
 
 function formSubmit(e) {
@@ -195,13 +229,13 @@ Uklonite sav JS iz HTML-a u posebne fajlove nazvane po stranici sa koje su uklon
 Pored velikih JS blokova koji se nalaze unutar `script` tagova, često imate i *inline* pozive JS funkcija. Uklonite i sve to, iz gore navedenih razloga. Dakle, ako ste imali:
 
 ```html
-<div onclick="showMore()">Show more!</a>
+<div onclick='showMore()'>Show more!</a>
 ```
 
 Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete smisliti bilo koju konvenciju, ja predlažem `js-` ispred naziva klase:
 
 ```html
-<div class="js-show-more">Show more!</a>
+<div class='js-show-more'>Show more!</a>
 ```
 
 ```javascript
@@ -263,7 +297,7 @@ Ovako prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koris
 
 ## Učitavajte skripte asinhrono
 
-![asinhrono učitavanje modula](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg "Razlika između blokirajućeg i asinhronog učitavanja JS modula")
+![asinhrono učitavanje modula](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg 'Razlika između blokirajućeg i asinhronog učitavanja JS modula')
 
 Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). Skripte se na taj način učitavaju istovremeno, umesto jedna za drugom, ali se takođe izvršavaju bez ikakvog reda, što može biti malo nezgodno.
 
@@ -287,7 +321,7 @@ incredibly difficult to tell what’s going on, which functions affect which var
 ```javascript
 var accordion = {
     currentItem: 1,
-    domElem: $("#accordion"),
+    domElem: $('#accordion'),
     startAccordion: function() { /* snip */ },
     isAtEnd: function() { /* snip */ }
     // and so on
@@ -295,7 +329,7 @@ var accordion = {
 
 var carousel = {
     currentItem: 1,
-    domElem: $("#carousel"),
+    domElem: $('#carousel'),
     transition: function() { /* snip */ }
     // and so on
 };
