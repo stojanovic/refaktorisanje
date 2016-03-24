@@ -12,6 +12,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Organizujte varijable u posebnu sekciju](#organizujte-varijable-u-posebnu-sekciju)
   * [Organizujte event listenere u posebnu sekciju](#organizujte-event-listenere-u-posebnu-sekciju)
   * [Organizujte funkcije u posebnu sekciju](#organizujte-funkcije-u-posebnu-sekciju)
+  * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
 
 ## Postavite sktrukturu stranice
@@ -139,11 +140,11 @@ function toRadians (angle) {
 }
 ```
 
-Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona treba i dalje da radi.
+Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona i dalje treba da radi.
 
 ## Imenujte anonimne funkcije
 
-Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo primera zbrkanog koda, kojim JavaScript iz browsera šalje http zahtev serveru (preuzet sa *callbackhell* sajta):
+Imenovanje anonimnih funkcija je važan korak kako bismo izbegli zloglasni [*callback pakao*](http://callbackhell.com/). Evo jednog primera zbrkanog koda (sa callbackhell.com), kojim se iz browsera šalje http zahtev serveru:
 
 ```javascript
 var form = document.querySelector('form')
