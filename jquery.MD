@@ -9,9 +9,9 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ## Sadržaj
   * [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
-  * [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
-  * [Odvojte event listenere u posebnu sekciju](#odvojte-event-listenere-u-posebnu-sekciju)
-  * [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
+  * [Organizujte varijable u posebnu sekciju](#organizujte-varijable-u-posebnu-sekciju)
+  * [Organizujte event listenere u posebnu sekciju](#organizujte-event-listenere-u-posebnu-sekciju)
+  * [Organizujte funkcije u posebnu sekciju](#organizujte-funkcije-u-posebnu-sekciju)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
 
 ## Postavite sktrukturu stranice
@@ -32,7 +32,7 @@ Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, 
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG' width='400'>
 
-## Odvojte varijable u posebnu sekciju
+## Organizujte varijable u posebnu sekciju
 
 Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` eventa.
 
@@ -50,7 +50,7 @@ var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bu
 
 ```
 
-## Odvojte event listenere u posebnu sekciju
+## Organizujte event listenere u posebnu sekciju
 
 Glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i svega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje ciljamo.
 
@@ -80,24 +80,25 @@ $(window).resize(function() {
 });
 ```
 
-U jQuery zajednici se razvio obrazac koji rešava problem dodavanja listenera na element koji još uvek ne postoji. Umesto da ciljamo klasu `.should-hide` koja možda još nije dodata:
+Ako ne želimo da gomilamo listenere u `document ready`, jQuery omogućuje da vežemo događaj za element koji još uvek ne postoji. Ako na primer hoćemo da vežemo klik event za klasu `.should-hide`, koja trenutno ne postoji u HTML-u:
 
 ```javascript
-$('.should-hide').click(function(){
-    $(this).hide();
+$('.should-hide').on('click', function() {
+  $(this).hide();
 });
 ```
 
-Možemo ciljati globalni `document` objekat, pa kad on bude kliknut uradiće nešto sa potčinjenom klasom:
+Čak ni nakon što ciljana klasa bude dodata u DOM, klik neće raditi. Međutim, ako vežemo klik za globalni `document` objekat, kad on bude kliknut delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
+
 ```javascript
-$(document).click(function(){
-    $('.should-hide').hide();
+$(document).on('click', '.should-hide', function(){
+	$(this).hide();
 });
 ```
 
-## Odvojte funkcije u posebnu sekciju
+## Organizujte funkcije u posebnu sekciju
 
-Pretražite fajl i odvojte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti. Sada naš odeljak sa funkcijama izgleda ovako:
+Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti. Sada naš odeljak sa funkcijama izgleda ovako:
 
 ```javascript
 /*** FUNCTIONS ***/
