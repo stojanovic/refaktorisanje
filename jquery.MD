@@ -10,12 +10,13 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 ## Sadržaj
   * [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
   * [Odvojte varijable u posebnu sekciju](#odvojte-varijable-u-posebnu-sekciju)
+  * [Odvojte event listenere u posebnu sekciju](#odvojte-event-listenere-u-posebnu-sekciju)
   * [Odvojte funkcije u posebnu sekciju](#odvojte-funkcije-u-posebnu-sekciju)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
 
 ## Postavite sktrukturu stranice
 
-Za početak, komentarima naznačite glavne odeljke koje ćete imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
+Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici. Možda neki nisu ni potrebni, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
 ```javascript
 /*** VARIABLES ***/
@@ -29,7 +30,31 @@ Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
-## Grupišite funkcije u posebnu sekciju
+## Odvojte varijable u posebnu sekciju
+
+Pretražite čitav fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od HTML elemenata, njih stavite unutar `document ready` event listenera.
+
+Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
+
+Isto važi i za [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koje proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju, pored ostalih konfiguracija. Ako neka podešavanja budu trebala da se menjaju, imaćete ih sve na okupu.
+
+(dati primer)
+
+
+## Odvojte event listenere u posebnu sekciju
+
+Prvi i glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i bilo čega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje nameravate da ciljate.
+
+(pri vrhu)
+
+```javascript
+$(document).ready(function() {
+
+    // svi ostali event listeneri idu unutra
+});
+```
+
+## Odvojte funkcije u posebnu sekciju
 
 Pretražite fajl i odvojte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti. Sada naš odeljak sa funkcijama izgleda ovako:
 
@@ -50,30 +75,6 @@ function toRadians (angle) {
 ```
 
 Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona treba i dalje da radi.
-
-## Grupišite varijable u posebnu sekciju
-
-Samo pretražite fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od HTML elemenata, njih stavite unutar `document ready` event listenera.
-
-Tokom procesa, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite gde treba. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
-
-Isto važi i za [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koje proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju, pored ostalih konfiguracija. Ako neka podešavanja budu trebala da se menjaju, imaćete ih sve na okupu.
-
-(dati primer)
-
-
-## Grupišite event listenere u posebnu sekciju
-
-Prvi i glavni jQuery slušalac događaja je `document ready`, koji se okida kada je HTML učitan (bez slika i bilo čega ostalog što učitava iz HTML-a). Ovaj event vam garantuje da će u trenutku izvršenja Javaskripta u DOM-u biti prisutni svi oni elementi koje nameravate da ciljate.
-
-(pri vrhu)
-
-```javascript
-$(document).ready(function() {
-
-    // svi ostali event listeneri idu unutra
-});
-```
 
 ## Imenujte anonimne funkcije
 
