@@ -96,6 +96,29 @@ $(document).on('click', '.should-hide', function(){
 });
 ```
 
+Kada na stranici ima puno događaja, ja preferiram drugo rešenje jer time izbegavamo stepeničastu strukturu koda i grupišemo događaje po vrsti, npr:
+
+```javascript
+/*** LISTENERS ***/
+
+$(document).ready(function() {
+    $table = $('#table');
+});
+
+$(window).resize(function() {
+  resizeThePage();
+});
+
+$(document).on('click', '.should-hide', function(){
+	$(this).hide();
+});
+
+$(document).on('click', '.book-description', function(){
+	$('.book').fadeIn('slow');
+});
+
+```
+
 ## Organizujte funkcije u posebnu sekciju
 
 Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti. Sada naš odeljak sa funkcijama izgleda ovako:
