@@ -74,13 +74,12 @@ $(document).ready(function() {
 
 });
 
-
 $(window).resize(function() {
   resizeThePage();
 });
 ```
 
-Postoji i drugo rešenje kako da vežemo događaj za element koji još uvek ne postoji. Ako, na primer, hoćemo da vežemo klik event za klasu `.should-hide`, koja trenutno ne postoji u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
+Postoji i drugo rešenje kako da vežemo okidač za element koji još uvek ne postoji. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
 $('.should-hide').on('click', function() {
