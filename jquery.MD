@@ -30,7 +30,7 @@ Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
-![](https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Colossus_Control_Panel.jpg/640px-Colossus_Control_Panel.jpg)
 
 ## Odvojte varijable u posebnu sekciju
 
