@@ -30,15 +30,15 @@ Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG" width="400">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FS_Clem_engine.jpg" width="400">
 
 ## Odvojte varijable u posebnu sekciju
 
-Pretražite čitav fajl (ključna reč `var`) i gde god se pojavljuje varijabla u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` listenera.
+Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` eventa.
 
-Tokom refaktorisanja, verovatno ćete primetiti da neke varijable ne treba da budu globalne nego lokalne, pa ih smestite u pripadajući opseg. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
+Ukoliko primetite da neke varijable ne treba da budu globalne nego lokalne, smestite ih u odgovarajući opseg. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Isto važi i za [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koje proleđujemo funkcijama. Imenujte ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
+Ukoliko nađete [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koji se prosleđuju funkcijama, imenujte ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
 
 ```javascript
 /*** KONFIG ***/
