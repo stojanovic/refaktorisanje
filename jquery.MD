@@ -253,7 +253,7 @@ $(window).load(function() {
 });
 ```
 
-U ovih nekoliko linija se zapravo mnogo toga dešava. Imamo event listener, parametarski objekat, jQuery selektor i izvršnu funkciju. Podešavanja slajdera možemo pomeriti među ostale konfiguracije na "kontrolnoj tabli":
+U ovih nekoliko linija se zapravo mnogo toga dešava. Imamo event listener, parametarski objekat, jQuery selektor i izvršnu funkciju. Hajde da podešavanja slajdera pomerimo među ostale konfiguracije na "kontrolnoj tabli":
 
 ```javascript
 var sliderParams = {
