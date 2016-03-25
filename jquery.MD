@@ -390,6 +390,8 @@ Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se o
 
 Našem modulu prosleđujemo globalnu `jQuery` varijablu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
 
+<img src='https://lostechies.com/derekgreer/files/2012/02/closure3.png' width='400'>
+
 Međutim, ako nam je nešto ipak potrebno iz zatvorenog modula, moramo to izvesti van. To ćemo uraditi tako što ćemo uskladištiti rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul:
 
 ```javascript
