@@ -54,7 +54,7 @@ var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bu
 
 ## Organizujte event listenere u posebnu sekciju
 
-`document ready` je glavni jQuery slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i ostalog što se učitava naknadno). Ovaj event nam jemči da će u trenutku izvršenja Javaskripta biti spremni svi HTML elementi.
+U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i ostalog što se učitava naknadno). Ovaj event nam jemči da će u trenutku izvršenja Javaskripta biti spremni svi HTML elementi.
 
 Niži slušači događaja obično idu unutar njega. Ako ih ostavimo izvan rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu ići zasebno, jer su nezavisni:
 
