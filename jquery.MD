@@ -393,8 +393,9 @@ Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporuč
 
 Postoji gomila rešenja koje regulišu [učitavanje](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) modula (npr. RequireJS, CommonJS, Webpack...), a možete sve to rešiti i ručno. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek kad se zavisnosti učitaju (npr. ako je za skriptu neophodan jQuery, izvršiće se nakon što se jQuery učita).
 
-## Organizujte srodne varijable u objekte
+## Organizujte varijable u objekte
 
+leteće varijable...
 http://12devsofxmas.co.uk/2014/01/day-8-architecting-your-front-end-javascript/
 
 A typical JavaScript file might be strewn with global variables and methods:
