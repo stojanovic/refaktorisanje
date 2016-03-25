@@ -15,6 +15,8 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
   * [Uklonite sav JavaScript iz HTML-a](#uklonite-sav-javascript-iz-html-a)
+  * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
+  * [Lokalizujte globalni prostor](#lokalizujte-globalni-prostor)
 
 ## Postavite sktrukturu stranice
 
