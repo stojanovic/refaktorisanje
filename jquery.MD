@@ -336,7 +336,7 @@ $('.js-show-more').click(showMore);
 
 ![alt text](http://i.stack.imgur.com/YaaJ6.png)
 
-Glavni JS fajl je sada bolje organizovan, ali i dalje preveliki. Podelite ga u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost. Na primer, ako se slajder koristi samo na naslovnoj strani, premestite ga tamo, sa svim pripadajućim konfiguracijama. Ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
+Glavni JS fajl je sada bolje organizovan, ali i dalje preveliki. Podelite ga u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost. Na primer, ako se slajder koristi samo na naslovnoj strani, premestite ga tamo. Ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
 
 Podela JS koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo ako je potrebno. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
 
