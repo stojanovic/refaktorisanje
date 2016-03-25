@@ -425,7 +425,7 @@ var carousel = {
 
 Immediately, with very little extra typing or effort, code is nicely contained, and it becomes easily apparent what each part of the code does.
 
-<img src='http://eloquentjavascript.net/img/object.jpg' width='300'>
+<img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
 ## Smestite selektore u varijable
 
