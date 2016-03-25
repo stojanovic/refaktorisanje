@@ -318,6 +318,8 @@ Umesto poziva funkcije, ostavite ostavite `CSS` klasu koju će vaš Javaskript c
 <div class='js-show-more'>Show more!</a>
 ```
 
+Nakon toga premeštamo klik okidač sa pozivom funkcije u JS fajl, među ostale event listenere:
+
 ```javascript
 $('.js-show-more').click(showMore);
 ```
