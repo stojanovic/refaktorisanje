@@ -81,6 +81,8 @@ $(window).resize(function() {
 });
 ```
 
+<img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='400'>
+
 Postoji i drugo rešenje kako da vežemo okidač za element koji još uvek ne postoji. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
