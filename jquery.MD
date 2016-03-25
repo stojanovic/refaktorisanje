@@ -99,7 +99,7 @@ $(document).on('click', '.should-hide', function(){
 
 <img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='600'>
 
-Između ova dva modela organizovanja eventa, ja preporučujem drugo rešenje jer time izbegavamo stepeničastu strukturu koda:
+Između ova dva načina organizacije, ja preporučujem drugo rešenje jer time izbegavamo stepeničastu strukturu koda:
 
 ```javascript
 /*** LISTENERS ***/
