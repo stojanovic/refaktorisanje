@@ -296,7 +296,7 @@ Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi naš
 
 ## Uklonite sav JavaScript iz HTML-a
 
-<img src='http://www.proun-game.com/Oogst3D/BLOG/Italian%20Food%20Coding%20Spaghetti.jpg' width='300'>
+<img src='http://www.proun-game.com/Oogst3D/BLOG/Italian%20Food%20Coding%20Spaghetti.jpg' width='400'>
 
 Akademska zajednica [preporučuje](http://www.ece.ubc.ca/~amesbah/docs/scam13.pdf) da se u web aplikacijama potpuno odvoje `JS`, `HTML` i `CSS`. HTML služi za prezentaciju sadržaja i strukture, CSS za stilizovanje, a JavaScript za funkcionalnost, što je princip poznat kao [razdvajanje briga](https://en.wikipedia.org/wiki/Separation_of_concerns). Nažalost, web developeri često mešaju ove jezike, što negativno utiče na razumevanje, održavanje i debagovanje programa.
 
