@@ -292,13 +292,12 @@ Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi naš
 
 ## Uklonite sav JavaScript iz HTML-a
 
-Akademska zajednica [preporučuje](http://www.ece.ubc.ca/~amesbah/docs/scam13.pdf) da se u web aplikacijama potpuno odvoje `JS`, `HTML` i `CSS`. HTML služi za prezentaciju sadržaja i strukture, CSS za stilizovanje, a JavaScript za funkcionalnost, što je princip poznat kao [razdvajanje briga](https://en.wikipedia.org/wiki/Separation_of_concerns). Nažalost, web developeri često mešaju JavaScript sa HTML-om i stilizovanjem, što negativno utiče na razumevanje, održavanje i debagovanje programa.
+Akademska zajednica [preporučuje](http://www.ece.ubc.ca/~amesbah/docs/scam13.pdf) da se u web aplikacijama potpuno odvoje `JS`, `HTML` i `CSS`. HTML služi za prezentaciju sadržaja i strukture, CSS za stilizovanje, a JavaScript za funkcionalnost, što je princip poznat kao [razdvajanje briga](https://en.wikipedia.org/wiki/Separation_of_concerns). Nažalost, web developeri često mešaju ove jezike, što negativno utiče na razumevanje, održavanje i debagovanje programa.
 
-Developeri često ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici.
+Verovatno često viđate male pomoćne skripte u HTML-u koje nešto rade na određenoj stranici:
 
 ```html
 <script>
-	// Any global variable set-up that might be needed.
 	$(document).ready(initPage);
 	doThis();
 	dontDoThat();
