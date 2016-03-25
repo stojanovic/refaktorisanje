@@ -81,8 +81,6 @@ $(window).resize(function() {
 });
 ```
 
-<img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='400'>
-
 Postoji i drugo rešenje kako da vežemo okidač za element koji još uvek ne postoji. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
@@ -95,9 +93,11 @@ Međutim, ako vežemo klik za globalni `document` objekat (koji je dostupan sve 
 
 ```javascript
 $(document).on('click', '.should-hide', function(){
-	$(this).hide();
+  $(this).hide();
 });
 ```
+
+<img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='600'>
 
 Između ova dva modela, ja preporučujem drugo rešenje jer time izbegavamo stepeničastu strukturu koda:
 
@@ -105,7 +105,7 @@ Između ova dva modela, ja preporučujem drugo rešenje jer time izbegavamo step
 /*** LISTENERS ***/
 
 $(document).ready(function() {
-    $table = $('#table');
+  $table = $('#table');
 });
 
 $(window).resize(function() {
@@ -113,11 +113,11 @@ $(window).resize(function() {
 });
 
 $(document).on('click', '.should-hide', function(){
-	$(this).hide();
+  $(this).hide();
 });
 
 $(document).on('click', '.book-description', function(){
-	$('.book').fadeIn('slow');
+  $('.book').fadeIn('slow');
 });
 ```
 
