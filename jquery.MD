@@ -190,8 +190,6 @@ Kao što vidite, imenovanje funkcija je lako i ima brojne prednosti:
 * omogućuje nam da pomerimo funkciju gde želimo
 * ako dođe do greške prijaviće nam aktuelnu funkciju, umesto anonimne
 
-<img src='https://stijndewitt.files.wordpress.com/2013/12/p_anonymous-function.png' width="400">
-
 Sada naša skripta za slanje formulara izgleda ovako:
 
 ```javascript
@@ -212,6 +210,8 @@ function postResponse (err, response, body) {
   statusMessage.value = body
 }
 ```
+
+<img src='https://stijndewitt.files.wordpress.com/2013/12/p_anonymous-function.png' width="400">
 
 Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada treba da ostanu anonimne, ali to treba eksplicirati tako što ćemo ih prevesti u [streličaste funkcije](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
