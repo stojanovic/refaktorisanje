@@ -269,7 +269,7 @@ var sliderParams = {
 }
 ```
 
-Izvršni deo koda stavljamo među event listenere (metoda `flexslider()` kreće nakon što se slike učitaju):
+Izvršni deo koda stavljamo među event listenere (metoda `flexslider` kreće nakon što se slike učitaju):
 
 ```javascript
 $(window).load(function() {
@@ -277,7 +277,7 @@ $(window).load(function() {
 });
 ```
 
-Ukoliko slajder koristi neki događaj koji smo već definisali, komandu za slajder dodajemo među ostale funkcije:
+Ukoliko slajder koristi događaj koji smo već definisali, komandu za slajder dodajemo među ostale funkcije:
 
 ```javascript
 $(window).load(function() {
@@ -286,6 +286,8 @@ $(window).load(function() {
   $('#flexslider1').flexslider(sliderParams);
 });
 ```
+
+Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi našeg projekta.
 
 ## Uklonite sav JavaScript iz HTML-a (odvojte JS, HTML i CSS)
 
