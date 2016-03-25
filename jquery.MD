@@ -304,15 +304,15 @@ Verovatno ste često viđali male pomoćne skripte u HTML-u koje nešto rade na 
 </script>
 ```
 
-Uklonite sav JS iz HTML-a u posebne fajlove nazvane po stranici sa koje su uklonjeni (npr. `contact.js` ili `products.js`) i učitajte ih regularnim putem. Između ostalog, ovo će nam omogućiti da imamo svu funkcionalnost na jednom mestu, da ne mešamo više jezika u jednom fajlu, da asinhrono učitavamo skripte i da postepeno pređemo na modularnu arhitekturu.
+Uklonite sav JS iz HTML-a u posebne fajlove, nazvane po stranici sa koje su uklonjeni (npr. `contact.js` ili `products.js`) i učitajte ih regularnim putem. Ovo će nam omogućiti da imamo svu funkcionalnost na jednom mestu, da ne mešamo više jezika u jednom fajlu, da asinhrono učitavamo skripte i da postepeno pređemo na modularnu arhitekturu.
 
-Pored velikih JS blokova koji se nalaze unutar `script` tagova, često imate i *inline* pozive JS funkcija. Uklonite i sve to, iz gore navedenih razloga. Dakle, ako ste imali:
+Pored velikih JS blokova koji se nalaze unutar `script` tagova, često nalazimo i *inline* pozive JS funkcija:
 
 ```html
 <div onclick='showMore()'>Show more!</a>
 ```
 
-Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete smisliti bilo koju konvenciju, ja predlažem `js-` ispred naziva klase:
+Uklonite sve to, iz gore navedenih razloga. Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete koristiti bilo koju konvenciju, ja predlažem prefiks `js-` ispred naziva klase:
 
 ```html
 <div class='js-show-more'>Show more!</a>
