@@ -1,3 +1,5 @@
+<img src='http://img.viralpatel.net/2014/01/javascript-module-design-pattern.png'>
+
 # Kako preživeti jQuery?
 ## Vodič za refaktorisanje Javaskript koda
 
