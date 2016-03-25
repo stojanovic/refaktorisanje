@@ -421,7 +421,7 @@ var mathModule = (function() {
 })();
 ```
 
-Sada su nam dve javne funkcije koje smo izvezli dostupne u `mathModule` imenskom prostoru i možemo ih koristiti na sledeći način: `mathModule.toDegrees(45)`. Treća funkcija `toCelsius`, koju nismo izvezli, ostaje privatna.
+Dve javne funkcije koje smo izvezli sada su dostupne u `mathModule` imenskom prostoru i možemo ih koristiti na sledeći način: `mathModule.toDegrees(45)`. Treća funkcija `toCelsius()`, koju nismo izvezli, ostaje privatna.
 
 ## Učitavajte skripte asinhrono
 
