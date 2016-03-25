@@ -215,6 +215,8 @@ Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada tr
 
 Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
 
+<img src='https://stijndewitt.files.wordpress.com/2013/12/p_anonymous-function.png'>
+
 ## Imenujte anonimne parametarske objekte
 
 Gornja skripta za slanje formulara ima jedan anonimni objekat, koji nije toliko upadljiv:
