@@ -346,44 +346,72 @@ Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [clos
 
 ```javascript
 (function() {
-    // jQuery je ovde dostupan pod alijasom $
-})();
-```
 
-Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet. Ako nam je nešto ipak potrebno, moramo to izvesti van:
+    /*** KONFIG ***/
 
-```javascript
-var DED = (function() {
+    var currentSpeed = 0;
+    var MAX_SPEED = 256;
 
-    var private_var;
+    /*** LISTENERS ***/
 
-    function private_method()
-    {
-        // do stuff here
+    $(window).resize(function() {
+      resizeThePage();
+    });
+
+    $(document).on('click', '.should-hide', function(){
+      $(this).hide();
+    });
+
+    /*** FUNCTIONS ***/
+
+    function toDegrees (angle) {
+      return angle * (180 / Math.PI);
     }
 
-    return {
-        method_1 : function()
-            {
-                // do stuff here
-            },
-        method_2 : function()
-            {
-                // do stuff here
-            }
-    };
+    function toRadians (angle) {
+      return angle * (Math.PI / 180);
+    }
+
 })();
 ```
 
-Ukoliko vaš modul ima neku spoljašnju zavisnost (u ovom slučaju sigurno jQuery, onda to eksplicirajte:
+Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati.
+
+Ukoliko naš modul ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte:
 
 ```javascript
 (function($) {
-    // jQuery je ovde dostupan pod alijasom $
+  // jQuery je unutra dostupan pod alijasom $
+
 })(jQuery);
 ```
 
-Ovako prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost modula u slučaju da promeni okruženje.
+Na ovaj način prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
+
+S druge strane, ako nam je nešto ipak potrebno iz našeg zatvorenog modula, moramo to izvesti van:
+
+```javascript
+var mainModule = (function() {
+
+  // everything here is private
+  var books;
+  var people;
+
+  function searchBooks() {
+    // do stuff here
+  }
+
+  function findPeople() {
+    // logic goes here
+  }
+
+  // this will expose public methods
+  return {
+    findPeople : findPeople,
+    searchBooks : searchBooks
+  }
+})();
+```
 
 ## Učitavajte skripte asinhrono
 
@@ -397,6 +425,9 @@ Postoji gomila rešenja koje regulišu [učitavanje](https://developer.mozilla.o
 
 leteće varijable...
 http://12devsofxmas.co.uk/2014/01/day-8-architecting-your-front-end-javascript/
+
+var robotHeight = 20;
+var robotSpeed = 20;
 
 A typical JavaScript file might be strewn with global variables and methods:
 ```javascript
