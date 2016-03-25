@@ -228,7 +228,7 @@ function formSubmit (e) {
 Možemo ga izdvojiti i staviti u uvodni odeljak sa ostalim konfiguracijama:
 
 ```javascript
-var httpParams = {
+var postParams = {
   uri: 'http://example.com/upload',
   body: document.querySelector('input').value,
   method: 'POST'
@@ -239,17 +239,17 @@ Izdvajanje konfiguracionih objekata nije uvek neophodno, ali ima smisla ukoliko 
 
 ```javascript
 $(window).load(function() {
-        $('#flexslider1').flexslider({
-        easing: "swing",  
-        animation: "fade",
-        slideshowSpeed: 7000,
-        animationSpeed: 600,
-        startAt: 0,
-        controlNav: true,
-        pausePlay: true,
-        pauseText: 'Pause',
-        playText: 'Play'
-    });
+    $('#flexslider1').flexslider({
+    easing: "swing",  
+    animation: "fade",
+    slideshowSpeed: 7000,
+    animationSpeed: 600,
+    startAt: 0,
+    controlNav: true,
+    pausePlay: true,
+    pauseText: 'Pause',
+    playText: 'Play'
+  });
 });
 ```
 
