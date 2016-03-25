@@ -145,7 +145,7 @@ function toRadians (angle) {
 
 Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona i dalje treba da radi.
 
-<img src='http://captivatedev.com/wp-content/uploads/2011/04/220pxFunction_machine2_svg_thumb.jpg' width='400'>
+<img src='http://captivatedev.com/wp-content/uploads/2011/04/220pxFunction_machine2_svg_thumb.jpg'>
 
 ## Imenujte anonimne funkcije
 
