@@ -326,7 +326,7 @@ Umesto poziva funkcije, ostavite ostavite `CSS` klasu koju će vaš Javaskript c
 <div class='js-show-more'>Show more!</a>
 ```
 
-Nakon toga premeštamo klik okidač sa pozivom funkcije u JS fajl, među ostale event listenere:
+Nakon toga smeštamo klik okidač koji poziva funkciju u JS fajl, među ostale event listenere:
 
 ```javascript
 $('.js-show-more').click(showMore);
@@ -336,11 +336,13 @@ $('.js-show-more').click(showMore);
 
 ![alt text](http://i.stack.imgur.com/YaaJ6.png)
 
-Podelite glavni Javaskript fajl u zasebne fajlove, nazvane po logičkim celinama za čiju funkcionalnost su zaduženi (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost.
+Glavni JS fajl je sada bolje organizovan, ali i je dalje preveliki. Podelite ga u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost.
 
-Podela briga će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo na toj stranici. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
+Na primer, ako se slajder koristi samo na naslovnoj strani, premestite ga tamo, sa svim pripadajućim konfiguracijama. Ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
 
-## Lokalizujte globalne varijable
+Podela Javaskript koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo ako je potrebno. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
+
+## Lokalizujte globalni prostor
 
 Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
