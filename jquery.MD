@@ -312,14 +312,14 @@ Pored velikih JS blokova koji se nalaze unutar `script` tagova, često nalazimo 
 <div onclick='showMore()'>Show more!</a>
 ```
 
-Uklonite sve to, iz gore navedenih razloga. Umesto toga ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete koristiti bilo koju konvenciju, ja predlažem prefiks `js-` ispred naziva klase:
+Umesto poziva funkcije, ostavite ostavite `CSS` klasu koju će vaš Javaskript ciljati. Pošto osnovna namena te klase nije stilizovanje, eksplicirajte to u njenom nazivu. Možete koristiti bilo koju konvenciju, ja predlažem prefiks `js-` ispred naziva:
 
 ```html
 <div class='js-show-more'>Show more!</a>
 ```
 
 ```javascript
-$('.doSomething').click(showMore);
+$('.js-show-more').click(showMore);
 ```
 
 ## Podelite kod u zasebne fajlove
