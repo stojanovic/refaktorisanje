@@ -27,7 +27,7 @@ Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici.
 /*** FUNCTIONS ***/
 ```
 
-Na početku su (globalne) varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se dešava logika i pozivaju funkcije. Na dnu se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog [*dizanja*] (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul.
+Na početku su varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se pozivaju funkcije (izvrši deo koda). Na kraju se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog [*dizanja*] (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul.
 
 Da biste stekli širu sliku, zamišljajte gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
@@ -212,6 +212,8 @@ Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarsko
 
 ## Imenujte anonimne parametarske objekte
 
+Gornja skripta za slanje formulara ima jedan anonimni objekat, koji nije toliko upadljiv:
+
 ```javascript
 function formSubmit (e) {
   var name = document.querySelector('input').value
@@ -223,20 +225,69 @@ function formSubmit (e) {
 }
 ```
 
-```javascript
-var postParams = {
-  uri: 'http://example.com/upload',
-  body: name,
-  method: 'POST'
-}
+Možemo ga izdvojiti i staviti u uvodni odeljak sa ostalim konfiguracijama:
 
-function formSubmit(e) {
-  var name = document.querySelector('input').value
-  request(postParams, postResponse)
+```javascript
+var httpParams = {
+  uri: 'http://example.com/upload',
+  body: document.querySelector('input').value,
+  method: 'POST'
 }
 ```
 
-## Uklonite sav JavaScript iz HTML-a
+Izdvajanje konfiguracionih objekata nije uvek neophodno, ali ima smisla ukoliko ćemo ih povremeno menjati. Npr. kada preuzimamo slajder `plugin`, često nam bude ponuđeno da preuzmemo parče koda poput ovog:
+
+```javascript
+$(window).load(function() {
+        $('#flexslider1').flexslider({
+        easing: "swing",  
+        animation: "fade",
+        slideshowSpeed: 7000,
+        animationSpeed: 600,
+        startAt: 0,
+        controlNav: true,
+        pausePlay: true,
+        pauseText: 'Pause',
+        playText: 'Play'
+    });
+});
+```
+
+U ovih nekoliko linija koda se zapravo mnogo toga dešava. Imamo event listener, parametarski objekat, jQuery selektor i izvršnu funkciju. Podešavanja slajdera možemo pomeriti među ostale konfiguracije na "kontrolnoj tabli":
+
+```javascript
+var sliderParams = {
+  easing: "swing",  
+  animation: "fade",
+  slideshowSpeed: 7000,
+  animationSpeed: 600,
+  startAt: 0,
+  controlNav: true,
+  pausePlay: true,
+  pauseText: 'Pause',
+  playText: 'Play'
+}
+```
+
+Izvršni deo koda stavljamo među event listenere (`flexslider` počinje nakon što se slike učitaju):
+
+```javascript
+$(window).load(function() {
+  $('#flexslider1').flexslider(sliderParams);
+});
+```
+
+Ukoliko slajder koristi događaj koji smo već definisali, komandu za slajder dodajemo među postojeće akcije:
+
+```javascript
+$(window).load(function() {
+  hideIntro();
+  showImages();
+  $('#flexslider1').flexslider(sliderParams);
+});
+```
+
+## Uklonite sav JavaScript iz HTML-a (odvojte JS, HTML i CSS)
 
 Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici.
 
