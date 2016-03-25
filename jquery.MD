@@ -344,7 +344,7 @@ Podela JS koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo 
 
 ## Zatvorite globalni prostor
 
-Trenutno imamo puno globalnih varijabli prilično uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko varijabla istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije (jedna će biti pregažena) i pucanja programa.
+Trenutno imamo puno globalnih varijabli prilično uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko varijabla istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije i pucanja programa.
 
 Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
