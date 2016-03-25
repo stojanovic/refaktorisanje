@@ -430,25 +430,5 @@ Immediately, with very little extra typing or effort, code is nicely contained, 
 
 <img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
-## Smestite selektore u varijable
-
-Ukoliko često hvatate određene elemente na stranici, na primer linkove, nemojte ih selektovati svaki put:
-```javascript
-$('a').click(function(){
-    $('a').addClass('wow');
-});
-```
-
-Umesto toga ih jednom uhvatite i smestite u varijablu (keširajte), čime ćete blago optimizovati kod:
-
-```javascript
-var $a = $('a');
-$a.click(function(){
-    $a.addClass('wow');
-});
-```
-
-Primećujete da `$` u nazivu varijable koristimo da naznačimo da je u pitanju jQuery objekat, a ne bilo kakva promenljiva, što je [*de facto* standard](http://lab.abhinayrathore.com/jquery-standards/).
-
 ## Korisni linkovi
 http://stackoverflow.com/questions/16736483/best-way-to-organize-jquery-javascript-code-2013
