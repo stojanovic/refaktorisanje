@@ -377,13 +377,11 @@ Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [clos
 })();
 ```
 
-Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati.
-
-Ukoliko naš modul ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte:
+Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati. Ukoliko naš modul ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte prosleđivanjem varijable:
 
 ```javascript
 (function($) {
-  // jQuery je unutra dostupan pod alijasom $
+  // jQuery varijabla je unutra dostupan pod alijasom $
 
 })(jQuery);
 ```
