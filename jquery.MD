@@ -16,7 +16,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
   * [Uklonite sav JavaScript iz HTML-a](#uklonite-sav-javascript-iz-html-a)
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
-  * [Zatvorite opseg skripti](#zatvorite-opseg-skripti)
+  * [Izolujte opseg skripti](#izolujte-opseg-skripti)
 
 ## Postavite sktrukturu stranice
 
@@ -342,11 +342,11 @@ Glavni JS fajl je sada bolje organizovan, ali i dalje preveliki. Podelite ga u m
 
 Podela JS koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo ako je potrebno. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
 
-## Zatvorite opseg skripti
+## Izolujte opseg skripti
 
-Trenutno imamo puno globalnih varijabli prilično uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko varijabla istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije i pucanja programa.
+Trenutno u fajlu imamo puno globalnih varijabli prilično uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko varijabla istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije i pucanja programa.
 
-Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
+Ceo fajl ćemo lako izolovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
 ```javascript
 (function() {
