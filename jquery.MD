@@ -395,8 +395,6 @@ Postoji gomila rešenja koje regulišu [učitavanje](https://developer.mozilla.o
 
 http://12devsofxmas.co.uk/2014/01/day-8-architecting-your-front-end-javascript/
 
-<img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
-
 A typical JavaScript file might be strewn with global variables and methods:
 ```javascript
 var height = 20;
@@ -426,6 +424,8 @@ var carousel = {
 ```
 
 Immediately, with very little extra typing or effort, code is nicely contained, and it becomes easily apparent what each part of the code does.
+
+<img src='http://eloquentjavascript.net/img/object.jpg' width='300'>
 
 ## Smestite selektore u varijable
 
