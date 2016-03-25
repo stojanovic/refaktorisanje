@@ -344,6 +344,8 @@ Podela JS koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo 
 
 ## Lokalizujte globalni prostor
 
+Trenutno imamo gomilu globalnih varijabli prilično uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko varijabla pod istim nazivom već postoji u drugom fajlu, ili nekoj biblioteci koju uključujemo, doćiće do kolizije (jedna će biti pregažena) i pucanja programa.
+
 Ceo Javaskript fajl ćemo lako lokalizovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
 ```javascript
@@ -386,32 +388,40 @@ Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se o
 })(jQuery);
 ```
 
-Na ovaj način prosleđujemo globalnu `jQuery` varijablu našem modulu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
+Našem modulu prosleđujemo globalnu `jQuery` varijablu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
 
-S druge strane, ako nam je nešto ipak potrebno iz našeg zatvorenog modula, moramo to izvesti van:
+Međutim, ako nam je nešto ipak potrebno iz zatvorenog modula, moramo to izvesti van. To ćemo uraditi tako što ćemo uskladištiti rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul:
 
 ```javascript
-var mainModule = (function() {
+var mathModule = (function() {
 
-  // everything here is private
-  var books;
-  var people;
+  /*** PRIVATNO ***/
 
-  function searchBooks() {
-    // do stuff here
+  var currentSpeed = 0;
+  var MAX_SPEED = 256;
+
+  function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
   }
 
-  function findPeople() {
-    // logic goes here
+  function toDegrees (angle) {
+    return angle * (180 / Math.PI);
   }
 
-  // this will expose public methods
+  function toRadians (angle) {
+    return angle * (Math.PI / 180);
+  }
+
+  /*** JAVNO ***/
+
   return {
-    findPeople : findPeople,
-    searchBooks : searchBooks
-  }
+    toDegrees : toDegrees,
+    toRadians : toRadians
+  };
 })();
 ```
+
+Sada su nam dve javne funkcije koje smo izvezli dostupne u `mathModule` imenskom prostoru i možemo ih koristiti na sledeći način: `mathModule.toDegrees(45)`. Treća funkcija `toCelsius`, koju nismo izvezli, ostaje privatna.
 
 ## Učitavajte skripte asinhrono
 
