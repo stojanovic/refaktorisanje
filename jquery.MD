@@ -269,7 +269,7 @@ var sliderParams = {
 }
 ```
 
-Izvršni deo koda stavljamo među event listenere (`flexslider()` kreće nakon što se slike učitaju):
+Izvršni deo koda stavljamo među event listenere (metoda `flexslider()` kreće nakon što se slike učitaju):
 
 ```javascript
 $(window).load(function() {
