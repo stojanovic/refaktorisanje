@@ -235,7 +235,7 @@ var postParams = {
 }
 ```
 
-Izdvajanje konfiguracionih objekata nije uvek neophodno, ali ima smisla ukoliko ćemo ih povremeno menjati. Npr. kada preuzimamo slajder `plugin`, često nam bude ponuđeno da preuzmemo parče koda poput ovog:
+Izdvajanje konfiguracionih objekata nije uvek neophodno, ali ima smisla ukoliko ćemo ih povremeno menjati. Npr. kada preuzimamo `plugin` za slajder, često nam bude ponuđeno parče koda poput ovog:
 
 ```javascript
 $(window).load(function() {
@@ -253,7 +253,7 @@ $(window).load(function() {
 });
 ```
 
-U ovih nekoliko linija koda se zapravo mnogo toga dešava. Imamo event listener, parametarski objekat, jQuery selektor i izvršnu funkciju. Podešavanja slajdera možemo pomeriti među ostale konfiguracije na "kontrolnoj tabli":
+U ovih nekoliko linija se zapravo mnogo toga dešava. Imamo event listener, parametarski objekat, jQuery selektor i izvršnu funkciju. Podešavanja slajdera možemo pomeriti među ostale konfiguracije na "kontrolnoj tabli":
 
 ```javascript
 var sliderParams = {
@@ -269,7 +269,7 @@ var sliderParams = {
 }
 ```
 
-Izvršni deo koda stavljamo među event listenere (`flexslider` počinje nakon što se slike učitaju):
+Izvršni deo koda stavljamo među event listenere (`flexslider()` kreće nakon što se slike učitaju):
 
 ```javascript
 $(window).load(function() {
@@ -277,7 +277,7 @@ $(window).load(function() {
 });
 ```
 
-Ukoliko slajder koristi događaj koji smo već definisali, komandu za slajder dodajemo među postojeće akcije:
+Ukoliko slajder koristi neki događaj koji smo već definisali, komandu za slajder dodajemo među ostale funkcije:
 
 ```javascript
 $(window).load(function() {
