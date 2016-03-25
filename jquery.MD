@@ -289,9 +289,11 @@ $(window).load(function() {
 
 Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi našeg projekta.
 
-## Uklonite sav JavaScript iz HTML-a (odvojte JS, HTML i CSS)
+## Uklonite sav JavaScript iz HTML-a
 
-Često kolege ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici.
+Akademska zajednica preporučuje da se u web aplikacijama potpuno odvoje JS, HTML i CSS.[](http://www.ece.ubc.ca/~amesbah/docs/scam13.pdf) HTML služi za prezentaciju sadržaja i strukture, CSS za stilizovanje, a JavaScript za funkcionalnost, što je princip poznat kao [razdvajanje briga](https://en.wikipedia.org/wiki/Separation_of_concerns). Nažalost, neki web developeri često mešaju JavaScript sa HTML-om i stilom, što negativno utiče na razumevanje, održavanje i debagovanje programa.
+
+Developeri često ubacuju male pomoćne skripte u HTML kako bi postigli neku funkcionalnost na određenoj stranici.
 
 ```html
 <script>
