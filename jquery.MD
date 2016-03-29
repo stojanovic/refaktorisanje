@@ -18,6 +18,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
   * [Učitavajte skripte asinhrono](#učitavajte-skripte-asinhrono)
+  * [Organizujte varijable u objekte](#organizujte-varijable-u-objekte)
 
 ## Postavite sktrukturu stranice
 
