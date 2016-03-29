@@ -379,11 +379,12 @@ Ceo fajl ćemo lako izolovati tako što ćemo ga zatvoriti u [closure](https://d
 })();
 ```
 
-Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati. Ukoliko naš modul ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte prosleđivanjem varijable:
+Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati. Ukoliko naš novi modul ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte prosleđivanjem varijable:
 
 ```javascript
 (function($) {
-  // jQuery varijabla je unutra dostupan pod alijasom $
+
+  // jQuery objekat je unutra dostupan pod alijasom $
 
 })(jQuery);
 ```
