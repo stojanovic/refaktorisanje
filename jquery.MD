@@ -440,7 +440,7 @@ Ukoliko uključujete skripte u HTML, postoje dva atributa za asinhrono učitavan
 <script src="main.js" defer></script>
 ```
 
-U Javascript fajlu [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije podržan, ali postoji gomila učitavača modula, možemo učitavati i [ručno](https://github.com/mudroljub/js-async-loader). [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
+Ukoliko uključujete skripte u Javascript fajl,  [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije podržan, ali postoji gomila učitavača modula, a možemo učitavati i [ručno](https://github.com/mudroljub/js-async-loader). [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
 
 ## Organizujte varijable u objekte
 
