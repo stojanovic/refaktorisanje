@@ -433,7 +433,14 @@ Dve javne metode koje smo izvezli sada su dostupne u `mathModule` imenskom prost
 
 Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). Skripte se na taj način umesto jedna za drugom, učitavaju istovremeno, ali se takođe izvršavaju bez ikakvog reda, što može biti malo nezgodno.
 
-Postoji gomila učitavača modula u Javascriptu, a možete sve to rešiti i [ručno](https://github.com/mudroljub/js-async-loader). [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
+Ukoliko učitavate skripte u HTML, postoje dva atributa za asinhrono učitavanje: `defer` i `async`. `defer` će odložiti izvršenje dok se sve skripte ne učitaju, i izvršavaće ih redom kojim su uključene. S druge strane, `async` izvršava skripte odmah, kako se koja učita, nezavisno od redosleda kojim su navedene. Ukoliko ne želite da ručno regulišete izvršenje skripti, najprostije rešenje je `defer` atribut:
+```html
+<script src="jquery.js" defer></script>
+<script src="slider-plugin.js" defer></script>
+<script src="main.js" defer></script>
+```
+
+U Javascript fajlu [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije podržan, ali postoji gomila učitavača modula, možemo učitavati i [ručno](https://github.com/mudroljub/js-async-loader). [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
 
 ## Organizujte varijable u objekte
 
