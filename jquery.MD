@@ -389,7 +389,7 @@ Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se o
 })(jQuery);
 ```
 
-Anonimnoj samoizvršnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
+Anonimnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
 
 <img src='https://lostechies.com/derekgreer/files/2012/02/closure3.png' width='400'>
 
