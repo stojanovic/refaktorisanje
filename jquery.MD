@@ -393,7 +393,7 @@ Anonimnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod
 
 <img src='https://lostechies.com/derekgreer/files/2012/02/closure3.png' width='400'>
 
-Ukoliko želimo da nešto iz unutrašnjosti postane dostupno, moramo to izvesti van. Uskladištimo rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul. Iznutra vraćamo objekat sa metodama koje postaju javne:
+Ukoliko želimo da nešto iz unutrašnjosti postane dostupno, moramo to izvesti van. Uskladištimo rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul. Iznutra [vraćamo](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/return) objekat sa metodama koje postaju javne:
 
 ```javascript
 var mathModule = (function() {
@@ -424,7 +424,7 @@ var mathModule = (function() {
 })();
 ```
 
-Dve javne funkcije koje smo izvezli sada su dostupne u `mathModule` imenskom prostoru i možemo ih koristiti na sledeći način: `mathModule.toDegrees(45)`. Treća funkcija `toCelsius()`, koju nismo izvezli, ostaje privatna.
+Dve javne metode koje smo izvezli sada su dostupne u `mathModule` imenskom prostoru i možemo ih koristiti na sledeći način: `mathModule.toDegrees(45)`. Treća funkcija `toCelsius()`, koju nismo izvezli, ostaje privatna.
 
 ## Učitavajte skripte asinhrono
 
