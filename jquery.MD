@@ -344,7 +344,7 @@ Podela JS koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo 
 
 ## Izolujte globalni opseg
 
-Trenutno u fajlu imamo puno globalnih varijabli prilično uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko varijabla istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije i pucanja programa.
+Trenutno u fajlu imamo puno globalnih varijabli uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko promenljiva istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije i pucanja programa.
 
 Ceo fajl ćemo lako izolovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
