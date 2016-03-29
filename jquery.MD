@@ -20,7 +20,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ## Postavite sktrukturu stranice
 
-Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici. Vaša organizacija se može razlikovati, ali korisno je napraviti mini sadržaj na početku kao putokaz:
+Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici. Vaša organizacija koda se može razlikovati, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
 ```javascript
 /*** KONFIG ***/
