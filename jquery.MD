@@ -431,9 +431,9 @@ Dve javne metode koje smo izvezli sada su dostupne u `mathModule` imenskom prost
 
 ![asinhrono učitavanje modula](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg 'Razlika između blokirajućeg i asinhronog učitavanja JS modula')
 
-Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). Skripte se na taj način učitavaju istovremeno, umesto jedna za drugom, ali se takođe izvršavaju bez ikakvog reda, što može biti malo nezgodno.
+Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS). Skripte se na taj način umesto jedna za drugom, učitavaju istovremeno, ali se takođe izvršavaju bez ikakvog reda, što može biti malo nezgodno.
 
-Postoji gomila rešenja koje regulišu [učitavanje](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) modula (npr. RequireJS, CommonJS, Webpack...), a možete sve to rešiti i ručno. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek kad se zavisnosti učitaju (npr. ako je za skriptu neophodan jQuery, izvršiće se nakon što se jQuery učita).
+Postoji gomila rešenja za [učitavanje](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) modula (npr. RequireJS, CommonJS, Webpack...), a možete sve to rešiti i [ručno](https://github.com/mudroljub/js-async-loader). [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek pošto se zavisnosti učitaju.
 
 ## Organizujte varijable u objekte
 
