@@ -17,7 +17,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
-  * [Učitavajte skripte asinhrono](ucitavajte-skripte-asinhrono)
+  * [Učitavajte skripte asinhrono](#učitavajte-skripte-asinhrono)
 
 ## Postavite sktrukturu stranice
 
