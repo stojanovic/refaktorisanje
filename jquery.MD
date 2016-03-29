@@ -440,7 +440,7 @@ U HTML-u postoje dva atributa za asinhrono učitavanje: `defer` i `async`. `defe
 <script src="main.js" defer></script>
 ```
 
-U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije podržan, ali postoje razni učitavači modula (može i [ručno](https://github.com/mudroljub/js-async-loader)). [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
+U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije prirodno podržan, ali postoje razni učitavači modula. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
 
 ## Organizujte varijable u objekte
 
