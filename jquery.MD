@@ -393,7 +393,7 @@ Anonimnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod
 
 <img src='https://lostechies.com/derekgreer/files/2012/02/closure3.png' width='400'>
 
-Međutim, ako nam je nešto ipak potrebno iz zatvorenog modula, moramo to izvesti van. Uskladištite rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul:
+Ukoliko želimo da nešto iz zatvorenosti postane dostupno, moramo to izvesti van. Uskladištimo rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul. `return` izrazom vraćamo objekat sa metodama koji postaju javne:
 
 ```javascript
 var mathModule = (function() {
@@ -418,8 +418,8 @@ var mathModule = (function() {
   /*** JAVNO ***/
 
   return {
-    toDegrees : toDegrees,
-    toRadians : toRadians
+    toDegrees: toDegrees,
+    toRadians: toRadians
   };
 })();
 ```
