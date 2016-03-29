@@ -14,7 +14,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Izdvojte funkcije u posebnu sekciju](#izdvojte-funkcije-u-posebnu-sekciju)
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
-  * [Uklonite sav JavaScript iz HTML-a](#uklonite-sav-javascript-iz-html-a)
+  * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
 
@@ -298,7 +298,7 @@ $(window).load(function() {
 
 Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi našeg projekta.
 
-## Uklonite sav JavaScript iz HTML-a
+## Uklonite JavaScript iz HTML-a
 
 <img src='http://www.proun-game.com/Oogst3D/BLOG/Italian%20Food%20Coding%20Spaghetti.jpg' width='300'>
 
@@ -389,7 +389,7 @@ Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se o
 })(jQuery);
 ```
 
-Našem modulu prosleđujemo globalnu `jQuery` varijablu, koju unutra koristimo pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
+Anonimnoj samoizvršnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
 
 <img src='https://lostechies.com/derekgreer/files/2012/02/closure3.png' width='400'>
 
