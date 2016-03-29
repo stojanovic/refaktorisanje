@@ -431,7 +431,7 @@ Dve javne metode koje smo izvezli sada su dostupne u `mathModule` imenskom prost
 
 ![asinhrono učitavanje modula](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg 'Razlika između blokirajućeg i asinhronog učitavanja JS modula')
 
-Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS) (ne blokira ostale resurse). Skripte se na taj način umesto jedna za drugom, učitavaju istovremeno, ali se izvršavaju bez ikakvog reda, što može biti malo nezgodno.
+Asinhrono učitavanje skripti je jedino ispravno rešenje koje [Google preporučuje](https://developers.google.com/speed/docs/insights/BlockingJS) (ne blokira ostale resurse). Skripte se na taj način umesto jedna za drugom, učitavaju istovremeno, izvršavajući bez ikakvog reda, što može biti malo nezgodno.
 
 Ukoliko uključujete skripte u HTML, postoje dva atributa za asinhrono učitavanje: `defer` i `async`. `defer` odlaže izvršenje dok se sve skripte ne učitaju, i izvršava ih redom kojim su uključene. S druge strane, `async` izvršava skripte kako koja pristiže, nezavisno od redosleda kojim su navedene. Ukoliko ne želite da ručno regulišete izvršenje skripti, najprostije rešenje je `defer` atribut:
 ```html
