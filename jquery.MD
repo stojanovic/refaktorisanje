@@ -379,7 +379,7 @@ Ceo fajl ćemo lako izolovati tako što ćemo ga zatvoriti u [closure](https://d
 })();
 ```
 
-Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati. Ukoliko naš novi modul ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte prosleđivanjem varijable:
+Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se odmah poziva. Na ovaj način, sve što je ostalo unutra više nije dostupno za spoljni svet i ovu funkciju više niko ne može pozvati. Ukoliko zatvorena funkcija ima neku spoljašnju zavisnost (u ovom slučaju jQuery), onda to eksplicirajte prosleđivanjem varijable:
 
 ```javascript
 (function($) {
@@ -389,11 +389,11 @@ Zagrade oko funkcije znače da je ona anonimna, a zagrade nakon funkcije da se o
 })(jQuery);
 ```
 
-Anonimnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da modul promeni okruženje.
+Anonimnoj funkciji prosleđujemo globalnu `jQuery` varijablu, koju ona prima pod alijasom `$`. Globalna varijabla će naravno biti dostupna i ako je ne prosledimo, ali ovako ekspliciramo zavisnost u slučaju da promenimo okruženje.
 
 <img src='https://lostechies.com/derekgreer/files/2012/02/closure3.png' width='400'>
 
-Međutim, ako nam je nešto ipak potrebno iz zatvorenog modula, moramo to izvesti van. To ćemo uraditi tako što ćemo uskladištiti rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul:
+Međutim, ako nam je nešto ipak potrebno iz zatvorenog modula, moramo to izvesti van. Uskladištite rezultat poziva anonimne funkcije u varijablu, koja postaje naš prvi Javascript modul:
 
 ```javascript
 var mathModule = (function() {
