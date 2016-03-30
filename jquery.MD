@@ -131,7 +131,7 @@ Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brz
 
 ## Izdvojte funkcije u posebnu sekciju
 
-Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Anonimne funkcije za sada ostavite gde jesu, ali ćemo i neke od njih kasnije odvojiti. Sada naš odeljak sa funkcijama izgleda ovako:
+Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija (*function declaration*), a ne funkcionalne izraze (*function expression*), jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali ćemo neke od njih kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
 
 ```javascript
 /*** FUNCTIONS ***/
@@ -447,19 +447,19 @@ U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/ref
 
 ## Organizujte varijable u objekte
 
-leteće varijable...
-http://12devsofxmas.co.uk/2014/01/day-8-architecting-your-front-end-javascript/
+Ukoliko u konfiguracionom delu fajla imate mnoštvo letećih varijabli, pokušajte da ih struktuirate, odnosno povežete u objekte. Na primer, ako imate:
 
 var robotHeight = 20;
 var robotSpeed = 20;
 
+
 A typical JavaScript file might be strewn with global variables and methods:
 ```javascript
-var height = 20;
-var width = 50;
-var x = 0;
-var moveToNextItem = function() { /* snip */ }
-var startAccordion = function() { /* snip */ }
+var headerHeight = 200;
+var headerWidth = 1024;
+var headerMargin = 20;
+var changeHeaderImage = function() { /* do it */ }
+var changeHeaderLogo = function() { /* I will do it boss */ }
 ```
 
 incredibly difficult to tell what’s going on, which functions affect which variables and which code is related, and which are entirely different parts of your app. Objects can help:
