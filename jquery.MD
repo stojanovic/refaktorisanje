@@ -131,7 +131,7 @@ Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brz
 
 ## Izdvojte funkcije u posebnu sekciju
 
-Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija (*function declaration*), a ne funkcionalne izraze (*function expression*), jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali ćemo neke od njih kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
+Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali ćemo neke od njih kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
 
 ```javascript
 /*** FUNCTIONS ***/
