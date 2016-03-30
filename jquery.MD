@@ -482,7 +482,7 @@ var robot = {
 }
 ```
 
-Ovako organizovan objekat sada možemo premestiti u zaseban fajl, a veoma lako ga možemo refaktorisati u klasu.
+Ovako organizovan objekat sada možemo [izdvojiti u zaseban fajl](#podelite-kod-u-zasebne-fajlove), a veoma lako ga možemo refaktorisati u klasu.
 
 <img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
