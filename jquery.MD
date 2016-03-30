@@ -1,9 +1,7 @@
 # Kako organizovati jQuery?
 ## Vodič za refaktorisanje Javaskript koda
 
-**Nivo**: *srednji - napredni.*
-
-***Ovaj vodić je namenjen organizovanju koda na većim Javaskcript projektima, na kojima se ne koristi ni jedan front-end framework. Ukoliko se koristi neki JS framework, treba pratiti njegove smernice.***
+***Ovaj vodić je namenjen organizovanju koda na većim Javaskcript projekatima, koji ne koriste ni jedan front-end framework. Ukoliko koriste neki JS framework, treba pratiti njegove smernice.***
 
 Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroman `Javascript/jQuery` fajl (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim.
 
@@ -133,7 +131,7 @@ Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brz
 
 ## Izdvojte funkcije u posebnu sekciju
 
-Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali ćemo neke od njih kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
+Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali neke od njih ćemo kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
 
 ```javascript
 /*** FUNCTIONS ***/
@@ -451,39 +449,40 @@ U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/ref
 
 Ukoliko u konfiguracionom delu fajla imate mnoštvo letećih varijabli, pokušajte da ih struktuirate, odnosno povežete u objekte. Na primer, ako imate:
 
-var robotHeight = 20;
+```javascript
+var robotHeight = 200;
+var robotWidth = 300;
 var robotSpeed = 20;
-
-
-A typical JavaScript file might be strewn with global variables and methods:
-```javascript
-var headerHeight = 200;
-var headerWidth = 1024;
-var headerMargin = 20;
-var changeHeaderImage = function() { /* do it */ }
-var changeHeaderLogo = function() { /* I will do it boss */ }
 ```
 
-incredibly difficult to tell what’s going on, which functions affect which variables and which code is related, and which are entirely different parts of your app. Objects can help:
-
+Povezite sve srodne leteće varijable u jedan objekat:
 ```javascript
-var accordion = {
-    currentItem: 1,
-    domElem: $('#accordion'),
-    startAccordion: function() { /* snip */ },
-    isAtEnd: function() { /* snip */ }
-    // and so on
-};
-
-var carousel = {
-    currentItem: 1,
-    domElem: $('#carousel'),
-    transition: function() { /* snip */ }
-    // and so on
-};
+var robot = {
+  height: 200,
+  width: 300,
+  speed: 20
+}
 ```
 
-Immediately, with very little extra typing or effort, code is nicely contained, and it becomes easily apparent what each part of the code does.
+Osim varijabli, često u fajlu postoje i funkcije povezane sa objektom, na primer:
+
+```javascript
+var changeRobotImage = function() { /* do it */ }
+var changeRobotSpeed = function() { /* do it */ }
+```
+
+Moguće je i njih pridružiti odgovarajućem objektu, pa tako dobijamo sve na jednom mestu:
+```javascript
+var robot = {
+  height: 200,
+  width: 1024,
+  speed: 20,
+  changeImage: function() { /* do it */ },
+  changeSpeed: function() { /* do it */ }
+}
+```
+
+Ovako organizovan objekat sada možemo premestiti u zaseban fajl, a veoma lako ga možemo refaktorisati u klasu.
 
 <img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
