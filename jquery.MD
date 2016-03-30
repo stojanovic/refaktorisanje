@@ -447,7 +447,7 @@ U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/ref
 
 ## Organizujte varijable u objekte
 
-Ukoliko u konfiguracionom delu fajla imate mnoštvo letećih varijabli, pokušajte da ih struktuirate, odnosno povežete u objekte. Na primer, ako imate:
+Ukoliko u konfiguracionom delu fajla imate mnoštvo letećih varijabli, pokušajte da ih struktuirate u objekte. Na primer, ako imate:
 
 ```javascript
 var robotHeight = 200;
