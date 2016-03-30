@@ -1,7 +1,7 @@
 # Kako organizovati jQuery?
 ## Vodič za refaktorisanje Javaskript koda
 
-*Nivo: srednji - napredni.*
+**Nivo**: *srednji - napredni.*
 
 ***Ovaj vodić je namenjen organizovanju koda na većim Javaskcript projekatima, na kojima se ne koristi ni jedan front-end framework. Ukoliko se koristi neki JS framework, treba pratiti njegove smernice.***
 
