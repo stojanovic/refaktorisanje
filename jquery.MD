@@ -455,7 +455,7 @@ var robotWidth = 300;
 var robotSpeed = 20;
 ```
 
-Povezite sve srodne leteće varijable u jedan objekat:
+Povezite ih u jedan objekat:
 ```javascript
 var robot = {
   height: 200,
@@ -464,14 +464,14 @@ var robot = {
 }
 ```
 
-Osim varijabli, često u fajlu postoje i funkcije povezane sa objektom, na primer:
+Osim varijabli, često postoje i funkcije povezane sa objektom, na primer:
 
 ```javascript
 var changeRobotImage = function() { /* do it */ }
 var changeRobotSpeed = function() { /* do it */ }
 ```
 
-Moguće je i njih pridružiti odgovarajućem objektu, pa tako dobijamo sve na jednom mestu:
+Moguće je i njih pridružiti odgovarajućem objektu, pa tako dobijamo sve lepo organizovano na jednom mestu:
 ```javascript
 var robot = {
   height: 200,
