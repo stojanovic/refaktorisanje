@@ -695,73 +695,6 @@ function fun(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Open/Close the folder
 $('#layers').on('dblclick', '.header', function(event){
 	//console.log( $(this).parentsUntil('.folder').html() );
@@ -902,9 +835,6 @@ $('.material_add').click(function(){
 
 
 
-
-
-
 $('.hide_layer_group').click(function(){  
 
 	$( group_selected ).each(function(index,value){
@@ -966,18 +896,6 @@ $("input.aplha").click(function() {
 	
 	} 
 });  // Change the alpha of the layer groups 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1360,7 +1278,6 @@ function getImage(data){
 
 
 
-
 $(".alist_of_games").on("contextmenu",".game",function(e) {
     e.preventDefault();
     alert(1);
@@ -1405,8 +1322,6 @@ return temp;
 // 		}, 2000);
 // 	}
 // });
-
-
 
 
 
@@ -1563,9 +1478,6 @@ function load_entities(){
 
 
 }
-
-
-
 
 
 
