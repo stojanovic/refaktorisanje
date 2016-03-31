@@ -101,7 +101,7 @@ $(window).resize(function() {
 });
 ```
 
-Međutim, ukoliko sve elemente trpamo u `document ready`, javascript fajl će brzo postati jedno veliko *jQuery crevo*. Štaviše, to nije dovoljno da bi radilo, jer se neki elementi dinamički ubacuju u DOM putem Javaskripta, tokom izvršenja programa. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, nakon što klasa dinamički bude dodata u DOM, klik neće raditi:
+Međutim, ukoliko sve elemente trpamo u `document ready`, Javascript fajl će brzo postati jedno veliko *jQuery crevo*. Štaviše, neće ni raditi elementi koji se dinamički ubacuju u DOM putem Javaskripta, tokom izvršenja programa. Ako, na primer, vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
 $(document).ready(function() {
