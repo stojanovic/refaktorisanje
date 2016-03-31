@@ -58,15 +58,14 @@ Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u glob
 
 Ukoliko primetite da neka varijabla ne treba da budu globalna nego lokalna, smestite je u odgovarajući opseg. Ukoliko vidite da se neka promenljiva zapravo koristi kao konstanta, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Ukoliko nađete [anonimni parametarski objekat](#imenujte-anonimne-parametarske-objekte), koji se prosleđuje funkciji, imenujte ga i premestite u uvodni odeljak. Tako ćemo imati sve konfiguracije na jednom mestu.
+Ukoliko nađete [anonimni parametarski objekat](#imenujte-anonimne-parametarske-objekte), koji se prosleđuje funkciji, imenujte ga i premestite u uvodni odeljak. Tako ćemo imati sve konfiguracije na jednom mestu. Sada naš uvodni odeljak izgleda ovako:
 
 ```javascript
 /*** KONFIG ***/
-
-var title = 'Refactoring jQuery';
+var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bude spreman
+var title = 'Refaktorišemo jQuery';
 var currentSpeed = 0;
 var MAX_SPEED = 256;
-var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bude spreman
 ```
 
 
