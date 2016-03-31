@@ -3,7 +3,7 @@
 
 ***Ovaj vodić je namenjen organizovanju koda na većim Javaskcript projekatima, koji ne koriste ni jedan front-end framework. Ukoliko koriste neki JS framework, treba pratiti njegove smernice.***
 
-Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na ogroman `Javascript/jQuery` fajl (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim.
+Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na [ogroman jQuery fajl](bad-jquery-example.js) (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim.
 
 `jQuery` je nastao kao pomoćno sredstvo za manipulaciju `DOM`-a, nije predviđen za ogromne front-end aplikacije koje su u međuvremenu nastale. Ako se pažljivo ne organizuje, jQuery ima tendenciju da na velikim projektima postane haotičan.
 
