@@ -74,7 +74,7 @@ var MAX_SPEED = 256;
 
 U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i svega ostalog što se učitava naknadno). On nam jemči da će u trenutku izvršenja koda biti spremni svi elementi iz HTML-a.
 
-Niži slušaoci događaja obično idu unutar njega. Ako ih ostavimo izvan, rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu biti izvan, jer su nezavisni.
+Niži osluškivači događaja obično idu unutar njega. Ako ih ostavimo izvan, rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu biti izvan, jer su nezavisni.
 
 Odeljak sa event listenerima sada izgleda otprilike ovako:
 
@@ -101,7 +101,7 @@ $(window).resize(function() {
 });
 ```
 
-Međutim, ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*. Štaviše, smeštanje event listenera u `document ready` nije dovoljno, jer se neki elementi dinamički ubacuju u DOM putem Javaskripta, tokom izvršenja programa. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, nakon što klasa dinamički bude dodata u DOM, klik neće raditi:
+Međutim, ukoliko sve elemente trpamo u `document ready`, javascript fajl će brzo postati jedno veliko *jQuery crevo*. Štaviše, to nije dovoljno da bi radilo, jer se neki elementi dinamički ubacuju u DOM putem Javaskripta, tokom izvršenja programa. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, nakon što klasa dinamički bude dodata u DOM, klik neće raditi:
 
 ```javascript
 $(document).ready(function() {
