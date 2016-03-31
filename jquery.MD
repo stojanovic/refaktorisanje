@@ -244,7 +244,7 @@ Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarsko
 
 ## Imenujte anonimne parametarske objekte
 
-Gornja skripta za slanje formulara ima jedan anonimni objekat, koji nije toliko upadljiv:
+Navedena skripta za slanje formulara ima jedan anonimni objekat, koji nije toliko upadljiv:
 
 ```javascript
 function formSubmit (e) {
@@ -285,7 +285,7 @@ $(window).load(function() {
 });
 ```
 
-U ovih nekoliko linija se zapravo mnogo toga dešava. Imamo event listener, parametarski objekat, jQuery selektor i izvršnu funkciju. Hajde da podešavanja slajdera pomerimo među ostale konfiguracije na "kontrolnoj tabli":
+U ovih nekoliko linija se zapravo mnogo toga dešava. Imamo slušalac događaja, parametarski objekat, jQuery selektor i pozivanje metode. Hajde da podešavanja slajdera pomerimo među ostale konfiguracije na "kontrolnoj tabli":
 
 ```javascript
 var sliderParams = {
@@ -352,7 +352,7 @@ Umesto poziva funkcije, ostavite ostavite `CSS` klasu koju će vaš Javaskript c
 <div class='js-show-more'>Show more!</a>
 ```
 
-Nakon toga smeštamo klik okidač koji poziva funkciju u JS fajl, među ostale event listenere:
+Nakon toga u JS fajl smeštamo klik okidač koji poziva funkciju, među ostale osluškivače događaja:
 
 ```javascript
 $('.js-show-more').click(showMore);
@@ -363,7 +363,7 @@ $('.js-show-more').click(showMore);
 
 Trenutno u fajlu imamo puno globalnih varijabli uopštenih naziva, što žestoko zagađuje globalni prostor. Ukoliko promenljiva istog naziva već postoji u drugom fajlu, ili biblioteci koju uključujemo, doćiće do kolizije i pucanja programa.
 
-Ceo fajl ćemo lako izolovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršujuću anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
+Ceo fajl ćemo lako izolovati tako što ćemo ga zatvoriti u [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), odnosno u [samoizvršnu anonimnu funkciju](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression):
 
 ```javascript
 (function() {
