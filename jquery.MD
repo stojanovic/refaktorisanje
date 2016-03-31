@@ -113,7 +113,7 @@ $(document).ready(function() {
 });
 ```
 
-Srećom, postoji standardno rešenje kako da vežemo slušalac događaja za element koji još uvek ne postoji. Ako vežemo klik za globalni `document` objekat (koji je dostupan sve vreme), kad on bude kliknut, delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
+Srećom, postoji standardno rešenje. Ako vežemo klik za globalni `document` objekat (koji je dostupan sve vreme), kad on bude kliknut, delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
 
 ```javascript
 $(document).on('click', '.should-hide', function(){
