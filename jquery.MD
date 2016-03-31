@@ -101,15 +101,19 @@ $(window).resize(function() {
 });
 ```
 
-Postoji i drugo rešenje kako da vežemo okidač za element koji još uvek ne postoji. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, čak ni nakon što klasa bude dodata u DOM, klik neće raditi:
+Međutim, ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*. Štaviše, smeštanje event listenera u `document ready` nije dovoljno, jer se neki elementi dinamički ubacuju u DOM putem Javaskripta, tokom izvršenja programa. Ako, na primer, hoćemo da vežemo klik za klasu `.should-hide`, koja trenutno nije u HTML-u, nakon što klasa dinamički bude dodata u DOM, klik neće raditi:
 
 ```javascript
-$('.should-hide').on('click', function() {
-  $(this).hide();
+$(document).ready(function() {
+
+  $('.should-hide').on('click', function() {
+    $(this).hide();
+  });
+
 });
 ```
 
-Međutim, ako vežemo klik za globalni `document` objekat (koji je dostupan sve vreme), kad on bude kliknut, delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
+Srećom, postoji standardno rešenje kako da vežemo slušalac događaja za element koji još uvek ne postoji. Ako vežemo klik za globalni `document` objekat (koji je dostupan sve vreme), kad on bude kliknut, delegiraće klik potčinjenoj klasi ukoliko se ona u međuvremenu pojavi:
 
 ```javascript
 $(document).on('click', '.should-hide', function(){
@@ -119,7 +123,7 @@ $(document).on('click', '.should-hide', function(){
 
 <img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='600'>
 
-Između ova dva načina organizacije, ja preporučujem drugo rešenje jer time izbegavamo stepeničastu strukturu koda:
+Između ova dva načina organizacije, treba koristiti drugo rešenje jer time izbegavamo pucanje programa, kao i stepeničastu strukturu koda:
 
 ```javascript
 /*** LISTENERS ***/
@@ -140,8 +144,6 @@ $(document).on('click', '.book-description', function(){
   $('.book').fadeIn('slow');
 });
 ```
-
-Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*.
 
 
 ## Izdvojte funkcije u poseban odeljak
