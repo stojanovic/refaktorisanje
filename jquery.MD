@@ -54,9 +54,9 @@ Da biste stekli širu sliku, zamislite gornji deo fajla kao kontrolnu tablu, gde
 
 ## Izdvojte varijable u poseban odeljak
 
-Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` eventa.
+Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih smestite unutar `document ready` eventa.
 
-Ukoliko primetite da neke varijable ne treba da budu globalne nego lokalne, smestite ih u odgovarajući opseg. Ukoliko vidite da se neke od promenljivih zapravo koriste kao konstante, naznačite to `VELIKIM_SLOVIMA` u nazivu.
+Ukoliko primetite da neka varijabla ne treba da budu globalna nego lokalna, smestite je u odgovarajući opseg. Ukoliko vidite da se neka promenljiva zapravo koristi kao konstanta, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
 Ukoliko nađete [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koji se prosleđuju funkcijama, imenujte ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
 
