@@ -455,7 +455,7 @@ var robotWidth = 300;
 var robotSpeed = 20;
 ```
 
-Povezite ih u jedan objekat:
+Povežite ih u jedan objekat:
 ```javascript
 var robot = {
   height: 200,
@@ -475,7 +475,7 @@ var changeRobotSpeed = function() {
 }
 ```
 
-Moguće je i metode pridružiti objektu, pa umesto razbacanih delova koda dobijamo struktuirani snop podataka:
+Moguće je i metode pridružiti objektu, pa umesto razbacanih delova koda dobijamo sledeću strukturu:
 ```javascript
 var robot = {
   height: 200,
