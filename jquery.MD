@@ -58,7 +58,7 @@ Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u glob
 
 Ukoliko primetite da neka varijabla ne treba da budu globalna nego lokalna, smestite je u odgovarajući opseg. Ukoliko vidite da se neka promenljiva zapravo koristi kao konstanta, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Ukoliko nađete [anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte), koji se prosleđuju funkcijama, imenujte ih i premestite u uvodnu sekciju. Tako ćemo imati sve konfiguracije na jednom mestu.
+Ukoliko nađete [anonimni parametarski objekat](#imenujte-anonimne-parametarske-objekte), koji se prosleđuje funkciji, imenujte ga i premestite u uvodni odeljak. Tako ćemo imati sve konfiguracije na jednom mestu.
 
 ```javascript
 /*** KONFIG ***/
