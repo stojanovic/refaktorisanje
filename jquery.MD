@@ -12,9 +12,9 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 ## Sadržaj
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Postavite sktrukturu Javaskripta](#postavite-sktrukturu-javaskripta)
-  * [Izdvojte varijable u posebnu sekciju](#izdvojte-varijable-u-posebnu-sekciju)
-  * [Izdvojte event listenere u posebnu sekciju](#izdvojte-event-listenere-u-posebnu-sekciju)
-  * [Izdvojte funkcije u posebnu sekciju](#izdvojte-funkcije-u-posebnu-sekciju)
+  * [Izdvojte varijable u poseban odeljak](#izdvojte-varijable-u-poseban-odeljak)
+  * [Izdvojte event listenere u poseban odeljak](#izdvojte-event-listenere-u-poseban-odeljak)
+  * [Izdvojte funkcije u poseban odeljak](#izdvojte-funkcije-u-poseban-odeljak)
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
   * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
@@ -52,7 +52,7 @@ Da biste stekli širu sliku, zamislite gornji deo fajla kao kontrolnu tablu, gde
 <img src='https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG' width='400'>
 
 
-## Izdvojte varijable u posebnu sekciju
+## Izdvojte varijable u poseban odeljak
 
 Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih stavite unutar `document ready` eventa.
 
@@ -70,7 +70,7 @@ var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bu
 ```
 
 
-## Izdvojte event listenere u posebnu sekciju
+## Izdvojte event listenere u poseban odeljak
 
 U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i ostalog što se učitava naknadno). On nam jemči da će u trenutku izvršenja koda biti spremni svi HTML elementi.
 
@@ -142,9 +142,9 @@ $(document).on('click', '.book-description', function(){
 Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*.
 
 
-## Izdvojte funkcije u posebnu sekciju
+## Izdvojte funkcije u poseban odeljak
 
-Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali neke od njih ćemo kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
+Pretražite fajl i organizujte sve funkcije u poseban odeljak, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali neke od njih ćemo kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
 
 ```javascript
 /*** FUNCTIONS ***/
