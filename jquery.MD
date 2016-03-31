@@ -58,7 +58,7 @@ Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u glob
 
 Ukoliko primetite da neka varijabla ne treba da budu globalna nego lokalna, smestite je u odgovarajući opseg. Ukoliko vidite da se neka promenljiva zapravo koristi kao konstanta, naznačite to `VELIKIM_SLOVIMA` u nazivu.
 
-Ukoliko nađete [anonimni parametarski objekat](#imenujte-anonimne-parametarske-objekte), koji se prosleđuje funkciji, imenujte ga i premestite u uvodni odeljak. Tako ćemo imati sve konfiguracije na jednom mestu. Sada naš uvodni odeljak izgleda ovako:
+Ukoliko nađete [anonimni parametarski objekat](#imenujte-anonimne-parametarske-objekte), koji se prosleđuje funkciji, imenujte ga i premestite u uvodni odeljak. Tako ćemo imati sve konfiguracije na jednom mestu. Sada naš uvodni odeljak izgleda otprilike ovako:
 
 ```javascript
 /*** KONFIG ***/
@@ -72,9 +72,9 @@ var MAX_SPEED = 256;
 
 ## Izdvojte event listenere u poseban odeljak
 
-U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i ostalog što se učitava naknadno). On nam jemči da će u trenutku izvršenja koda biti spremni svi HTML elementi.
+U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i svega ostalog što se učitava naknadno). On nam jemči da će u trenutku izvršenja koda biti spremni svi elementi iz HTML-a.
 
-Niži slušači događaja obično idu unutar njega. Ako ih ostavimo izvan rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu ići zasebno, jer su nezavisni:
+Niži slušaoci događaja obično idu unutar njega. Ako ih ostavimo izvan, rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu biti izvan, jer su nezavisni. Odeljak sa event listenerima sada izgleda otprilike ovako:
 
 
 ```javascript
