@@ -1,4 +1,5 @@
 # Kako organizovati jQuery?
+"All code in any code-base should look like a single person typed it, no matter how many people contributed."
 ## Vodič za refaktorisanje Javaskript koda
 
 ***Ovaj vodić je namenjen organizovanju koda na većim Javaskcript projekatima, koji ne koriste ni jedan front-end framework. Vodič se ne bavi tehnikama optimizacije i kodnim stilom, već isključivo arhitekturom.***
