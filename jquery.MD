@@ -27,7 +27,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ![alt text](http://i.stack.imgur.com/YaaJ6.png)
 
-Podela koda je veoma dobar prvi korak koji olakšava razvoj. Podelite glavni JS fajl u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost. Na primer, ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
+Podelite glavni JS fajl u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost. Na primer, ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
 
 Podela koda će nam, zajedno sa drugim koracima, pomoći da pređemo na modularnu organizaciju projekta. Nakon razdvajanja u svrhe razvoja, upotrebite neku build alatku (kao `Grunt` ili `Gulp`), da sve spakujete u jedan minifikovan fajl.
 
