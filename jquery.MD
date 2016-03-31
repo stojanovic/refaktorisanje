@@ -475,7 +475,7 @@ var changeRobotSpeed = function() {
 }
 ```
 
-Moguće je i njih pridružiti odgovarajućem objektu, pa tako dobijamo sve lepo organizovano na jednom mestu:
+Moguće je i metode pridružiti odgovarajućem objektu, pa tako umesto razbacanih delova koda imamo struktuirani snop podataka:
 ```javascript
 var robot = {
   height: 200,
