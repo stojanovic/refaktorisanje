@@ -1,6 +1,6 @@
 # Kako organizovati jQuery?
 ## Vodič za refaktorisanje Javaskript koda
-> Sav kod na svim projektima treba da izgleda kao da ga je pisala ista osoba, bez obzira koliko ih je doprinosilo.
+> Sav kod na svim projektima treba da izgleda kao da ga je pisala ista osoba, bez obzira koliko je ljudi doprinosilo.
 
 ***Ovaj vodić je namenjen organizovanju koda na većim Javaskcript projekatima, koji ne koriste ni jedan front-end framework. Vodič se ne bavi tehnikama optimizacije i kodnim stilom, već isključivo arhitekturom.***
 
