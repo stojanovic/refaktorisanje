@@ -10,6 +10,7 @@ Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na [ogrom
 Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Nakon refaktorisanja, stara i neodrživa aplikacija će moći da nastavi razvoj, a `JavaSkript` kod će biti moguće odvojiti u zasebne module i prevesti u ES6.
 
 ## Sadržaj
+  * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Postavite sktrukturu stranice](#postavite-sktrukturu-stranice)
   * [Izdvojte varijable u posebnu sekciju](#izdvojte-varijable-u-posebnu-sekciju)
   * [Izdvojte event listenere u posebnu sekciju](#izdvojte-event-listenere-u-posebnu-sekciju)
@@ -17,14 +18,24 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
   * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
-  * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
   * [Učitavajte skripte asinhrono](#učitavajte-skripte-asinhrono)
   * [Organizujte varijable u objekte](#organizujte-varijable-u-objekte)
 
+
+## Podelite kod u zasebne fajlove
+
+![alt text](http://i.stack.imgur.com/YaaJ6.png)
+
+Podela koda je veoma dobar prvi korak koji olakšava razvoj. Podelite glavni JS fajl u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost. Na primer, ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
+
+Podela koda će nam, zajedno sa drugim koracima, pomoći da pređemo na modularnu organizaciju projekta. Nakon razdvajanja u svrhe razvoja, upotrebite neku build alatku (kao `Grunt` ili `Gulp`), da sve spakujete u jedan minifikovan fajl.
+
+Ovaj korak možete preskočiti ukoliko glavni fajl nema više od dvestotinjak linija.
+
 ## Postavite sktrukturu stranice
 
-Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici. Vaša organizacija koda se može razlikovati, ali korisno je napraviti mini sadržaj na početku kao putokaz:
+Komentarima naznačite glavne odeljke koje ćemo imati unutar svakog fajla. Vaša struktura se može razlikovati, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
 ```javascript
 /*** KONFIG ***/
@@ -34,11 +45,12 @@ Za početak, komentarima naznačite glavne odeljke koje ćemo imati na stranici.
 /*** FUNCTIONS ***/
 ```
 
-Na početku su varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se pozivaju funkcije (izvršni deo koda). Na kraju se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog [*dizanja*] (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul.
+Na vrhu su varijable, koje služe kao konfiguracija. Potom dolaze event listeneri, unutar kojih se pozivaju funkcije (izvršni deo koda). Na kraju se nalaze deklaracije funkcija, koje je moguće ranije koristiti zbog [*dizanja*] (http://www.w3schools.com/js/js_hoisting.asp). Neke od opštekorisnih funkcija kasnije možemo odvojiti u poseban fajl (npr. `utils.js`), izolovati iz globalnog opsega i organizovati kao modul.
 
 Da biste stekli širu sliku, zamislite gornji deo fajla kao kontrolnu tablu, gde podešavate neke dugmiće, a donji deo kao unutrašnjost mašine. Sve dok radi, unutrašnjost mašine ne treba da vam bude pred očima. Kad neki deo otkaže, otvarate ga. Tako je i sa funkcijama (modulima). Ne treba sve vreme da vam budu pred očima.
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG' width='400'>
+
 
 ## Izdvojte varijable u posebnu sekciju
 
@@ -55,8 +67,8 @@ var title = 'Refactoring jQuery';
 var currentSpeed = 0;
 var MAX_SPEED = 256;
 var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bude spreman
-
 ```
+
 
 ## Izdvojte event listenere u posebnu sekciju
 
@@ -129,6 +141,7 @@ $(document).on('click', '.book-description', function(){
 
 Ukoliko celu logiku trpamo u `document ready`, javascript fajl će nam veoma brzo postati jedno veliko *jQuery crevo*.
 
+
 ## Izdvojte funkcije u posebnu sekciju
 
 Pretražite fajl i organizujte sve funkcije u posebnu sekciju, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) presudna (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali neke od njih ćemo kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
@@ -152,6 +165,7 @@ function toRadians (angle) {
 Tokom ovog procesa, verovatno ćete morati da popravite neke funkcije. Vodite računa da svaka funkcija obavlja jedan zadatak i da ima jasno definisan ulaz i izlaz (ukoliko treba nešto da vrati). Nemojte da funkcija podrazumeva dostupnost bilo čega, osim onog što joj je prosleđeno. Imajte na umu da kad premestite funkciju u drugi kontekst ona i dalje treba da radi.
 
 <img src='http://captivatedev.com/wp-content/uploads/2011/04/220pxFunction_machine2_svg_thumb.jpg' width='300'>
+
 
 ## Imenujte anonimne funkcije
 
@@ -222,6 +236,7 @@ function postResponse (err, response, body) {
 Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada treba da ostanu anonimne, ali to treba eksplicirati tako što ćemo ih prevesti u [streličaste funkcije](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
+
 
 ## Imenujte anonimne parametarske objekte
 
@@ -302,6 +317,7 @@ $(window).load(function() {
 
 Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi našeg projekta.
 
+
 ## Uklonite JavaScript iz HTML-a
 
 <img src='http://www.proun-game.com/Oogst3D/BLOG/Italian%20Food%20Coding%20Spaghetti.jpg' width='300'>
@@ -338,13 +354,6 @@ Nakon toga smeštamo klik okidač koji poziva funkciju u JS fajl, među ostale e
 $('.js-show-more').click(showMore);
 ```
 
-## Podelite kod u zasebne fajlove
-
-![alt text](http://i.stack.imgur.com/YaaJ6.png)
-
-Glavni JS fajl je sada bolje organizovan, ali i dalje preveliki. Podelite ga u manje fajlove, nazvane po logičnim celinama za čiju funkcionalnost su nadležni (npr. `contact.js`, `header.js`, `slider.js`). U glavnom fajlu ostavite samo zajedničku funkcionalnost. Na primer, ako se slajder koristi samo na naslovnoj strani, premestite ga tamo. Ako se funkcija za slanje formulara koristi samo na kontakt stranici, smestite je tamo. Obavezno testirajte program posle svakog premeštanja.
-
-Podela JS koda će nam olakšati razvoj i smanjiti vreme učitavanja, jer ćemo skripte specifične za neku stranicu učitavati samo ako je potrebno. Zajedno sa drugim koracima, ovo će nam pomoći da pređemo na modularnu organizaciju projekta.
 
 ## Izolujte globalni opseg
 
@@ -430,6 +439,7 @@ var mathModule = (function() {
 
 Dve javne metode koje smo izvezli sada su dostupne u `mathModule` imenskom prostoru i možemo ih koristiti na sledeći način: `mathModule.toDegrees(45)`. Treća funkcija `toCelsius()`, koju nismo izvezli, ostaje privatna.
 
+
 ## Učitavajte skripte asinhrono
 
 ![asinhrono učitavanje modula](https://upload.wikimedia.org/wikipedia/commons/2/22/Asynchronous_Module_Definition_overview_vector.svg 'Razlika između blokirajućeg i asinhronog učitavanja JS modula')
@@ -444,6 +454,7 @@ U HTML-u postoje dva atributa za asinhrono učitavanje: `defer` i `async`. `defe
 ```
 
 U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije prirodno podržan, ali postoje razni učitavači modula. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
+
 
 ## Organizujte varijable u objekte
 
@@ -494,8 +505,6 @@ Ovako organizovan objekat sada možemo [izdvojiti u zaseban fajl](#podelite-kod-
 
 <img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
+
 ## Korisni linkovi
 http://stackoverflow.com/questions/16736483/best-way-to-organize-jquery-javascript-code-2013
-
-## TODO:
-* prvo podeliti kod po celinama, onda po funkcionalnosti?
