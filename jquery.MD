@@ -11,7 +11,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 
 ## Sadržaj
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
-  * [Dajte sktrukturu Javaskriptu](#dajte-sktrukturu-javaskriptu)
+  * [Postavite sktrukturu Javaskripta](#postavite-sktrukturu-javaskripta)
   * [Izdvojte varijable u posebnu sekciju](#izdvojte-varijable-u-posebnu-sekciju)
   * [Izdvojte event listenere u posebnu sekciju](#izdvojte-event-listenere-u-posebnu-sekciju)
   * [Izdvojte funkcije u posebnu sekciju](#izdvojte-funkcije-u-posebnu-sekciju)
@@ -33,7 +33,7 @@ Podela koda će nam, zajedno sa drugim koracima, pomoći da pređemo na modularn
 
 Ovaj korak možete preskočiti ukoliko glavni fajl nema više od dvestotinjak linija.
 
-## Dajte sktrukturu Javaskriptu
+## Postavite sktrukturu Javaskripta
 
 Komentarima naznačite glavne odeljke koje ćemo imati unutar svakog fajla. Vaša struktura se može razlikovati, ali korisno je napraviti mini sadržaj na početku kao putokaz:
 
