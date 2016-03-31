@@ -101,6 +101,8 @@ $(window).resize(function() {
 });
 ```
 
+<img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='600'>
+
 Međutim, ukoliko sve trpamo u `document ready`, Javascript fajl će brzo postati jedno veliko *jQuery crevo*. Štaviše, neće raditi događaji za elemente koji se dinamički ubacuju u DOM, tokom izvršenja programa. Ako, na primer, vežemo `klik` za klasu `.should-hide`, koja trenutno nije u HTML-u, nakon što klasa bude dodata u DOM, klik neće raditi:
 
 ```javascript
@@ -120,8 +122,6 @@ $(document).on('click', '.should-hide', function(){
   $(this).hide();
 });
 ```
-
-<img src='http://www.simoahava.com/wp-content/uploads/2014/08/custom-listeners.png' width='600'>
 
 Između ova dva načina organizacije, treba koristiti drugo rešenje jer time izbegavamo pucanje programa, kao i stepeničastu strukturu koda:
 
