@@ -123,7 +123,7 @@ $(document).on('click', '.should-hide', function(){
 });
 ```
 
-Između ova dva načina organizacije, treba koristiti drugo rešenje jer time izbegavamo pucanje programa, kao i stepeničastu strukturu koda:
+Između ova dva načina organizacije, treba koristiti drugo rešenje jer time izbegavamo pucanje programa, kao i stepeničastu strukturu koda. Odeljak sa osluškivačima događaja na kraju treba da izgleda ovako:
 
 ```javascript
 /*** LISTENERS ***/
