@@ -62,7 +62,8 @@ Ukoliko nađete [anonimni parametarski objekat](#imenujte-anonimne-parametarske-
 
 ```javascript
 /*** KONFIG ***/
-var $table; // sada samo proglašavamo, a vrednost dodajemo kasnije, kada DOM bude spreman
+
+var $table; // samo proglašavamo, a vrednost dodajemo kasnije kada DOM bude spreman
 var title = 'Refaktorišemo jQuery';
 var currentSpeed = 0;
 var MAX_SPEED = 256;
