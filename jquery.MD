@@ -191,7 +191,7 @@ form.onsubmit = function (submitEvent) {
 }
 ```
 
-U gornjem kodu postoje dve anonimne funkcije. Hajde da ih imenujemo:
+U gornjem kodu postoje dve anonimne funkcije. Hajde da ih imenujemo `formSubmit` i `postResponse`:
 
 ```javascript
 var form = document.querySelector('form')
@@ -235,9 +235,9 @@ function postResponse (err, response, body) {
 }
 ```
 
-<img src='https://stijndewitt.files.wordpress.com/2013/12/p_anonymous-function.png' width="400">
-
 Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada treba da ostanu anonimne, ali to treba eksplicirati tako što ćemo ih prevesti u [streličaste funkcije](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+<img src='https://stijndewitt.files.wordpress.com/2013/12/p_anonymous-function.png' width="400">
 
 Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
 
