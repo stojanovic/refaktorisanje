@@ -467,11 +467,11 @@ var robot = {
 Osim varijabli, često postoje i funkcije povezane sa objektom, na primer:
 
 ```javascript
-var changeRobotImage = function() { 
-  /* do it */ 
+var changeRobotImage = function() {
+  /* function body */
 }
-var changeRobotSpeed = function() { 
-  /* do it */ 
+var changeRobotSpeed = function() {
+  /* function body */
 }
 ```
 
@@ -481,11 +481,11 @@ var robot = {
   height: 200,
   width: 1024,
   speed: 20,
-  changeImage: function() { 
-    /* do it */ 
+  changeImage: function() {
+    /* function body */
   },
-  changeSpeed: function() { 
-    /* do it */ 
+  changeSpeed: function() {
+    /* function body */
   }
 }
 ```
