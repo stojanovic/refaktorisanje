@@ -17,10 +17,10 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Izdvojte funkcije u poseban odeljak](#izdvojte-funkcije-u-poseban-odeljak)
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
+  * [Organizujte varijable u objekte](#organizujte-varijable-u-objekte)
   * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
   * [Učitavajte skripte asinhrono](#učitavajte-skripte-asinhrono)
-  * [Organizujte varijable u objekte](#organizujte-varijable-u-objekte)
 
 
 ## Podelite kod u zasebne fajlove
@@ -322,6 +322,56 @@ $(window).load(function() {
 Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi našeg projekta.
 
 
+## Organizujte varijable u objekte
+
+Ukoliko u konfiguracionom delu fajla imate letećih varijabli, struktuirajte ih u objekte. Na primer, ako imate:
+
+```javascript
+var robotHeight = 200;
+var robotWidth = 300;
+var robotSpeed = 20;
+```
+
+Povežite ih u jedan objekat:
+```javascript
+var robot = {
+  height: 200,
+  width: 300,
+  speed: 20
+}
+```
+
+Osim varijabli, često postoje i funkcije povezane sa objektom, na primer:
+
+```javascript
+var changeRobotImage = function() {
+  /* function body */
+}
+var changeRobotSpeed = function() {
+  /* function body */
+}
+```
+
+Moguće je i metode pridružiti objektu, pa umesto razbacanih delova koda dobijamo sledeću strukturu:
+```javascript
+var robot = {
+  height: 200,
+  width: 1024,
+  speed: 20,
+  changeImage: function() {
+    /* function body */
+  },
+  changeSpeed: function() {
+    /* function body */
+  }
+}
+```
+
+Ovako organizovan objekat sada možemo [izdvojiti u zaseban fajl](#podelite-kod-u-zasebne-fajlove), a veoma lako ga možemo refaktorisati u klasu.
+
+<img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
+
+
 ## Uklonite JavaScript iz HTML-a
 
 <img src='http://www.proun-game.com/Oogst3D/BLOG/Italian%20Food%20Coding%20Spaghetti.jpg' width='300'>
@@ -458,56 +508,6 @@ U HTML-u postoje dva atributa za asinhrono učitavanje: `defer` i `async`. `defe
 ```
 
 U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije prirodno podržan, ali postoje razni učitavači modula. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
-
-
-## Organizujte varijable u objekte
-
-Ukoliko u konfiguracionom delu fajla imate letećih varijabli, struktuirajte ih u objekte. Na primer, ako imate:
-
-```javascript
-var robotHeight = 200;
-var robotWidth = 300;
-var robotSpeed = 20;
-```
-
-Povežite ih u jedan objekat:
-```javascript
-var robot = {
-  height: 200,
-  width: 300,
-  speed: 20
-}
-```
-
-Osim varijabli, često postoje i funkcije povezane sa objektom, na primer:
-
-```javascript
-var changeRobotImage = function() {
-  /* function body */
-}
-var changeRobotSpeed = function() {
-  /* function body */
-}
-```
-
-Moguće je i metode pridružiti objektu, pa umesto razbacanih delova koda dobijamo sledeću strukturu:
-```javascript
-var robot = {
-  height: 200,
-  width: 1024,
-  speed: 20,
-  changeImage: function() {
-    /* function body */
-  },
-  changeSpeed: function() {
-    /* function body */
-  }
-}
-```
-
-Ovako organizovan objekat sada možemo [izdvojiti u zaseban fajl](#podelite-kod-u-zasebne-fajlove), a veoma lako ga možemo refaktorisati u klasu.
-
-<img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
 
 ## Korisni linkovi
