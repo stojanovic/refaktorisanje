@@ -74,7 +74,9 @@ var MAX_SPEED = 256;
 
 U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i svega ostalog što se učitava naknadno). On nam jemči da će u trenutku izvršenja koda biti spremni svi elementi iz HTML-a.
 
-Niži slušaoci događaja obično idu unutar njega. Ako ih ostavimo izvan, rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu biti izvan, jer su nezavisni. Odeljak sa event listenerima sada izgleda otprilike ovako:
+Niži slušaoci događaja obično idu unutar njega. Ako ih ostavimo izvan, rizikujemo da element koji ciljamo još nije spreman. Listeneri koji se kače na globalne objekte (`document` ili `window`) mogu biti izvan, jer su nezavisni.
+
+Odeljak sa event listenerima sada izgleda otprilike ovako:
 
 
 ```javascript
