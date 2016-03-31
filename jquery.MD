@@ -475,7 +475,7 @@ var changeRobotSpeed = function() {
 }
 ```
 
-Moguće je i metode pridružiti odgovarajućem objektu, pa tako umesto razbacanih delova koda imamo struktuirani snop podataka:
+Moguće je i metode pridružiti objektu, pa umesto razbacanih delova koda dobijamo struktuirani snop podataka:
 ```javascript
 var robot = {
   height: 200,
