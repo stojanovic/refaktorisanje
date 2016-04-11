@@ -511,4 +511,6 @@ U HTML-u postoje dva atributa za asinhrono učitavanje: `defer` i `async`. `defe
 U Javascriptu, [import](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) izraz još uvek nije prirodno podržan, ali postoje razni učitavači modula. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition) alatke nam omogućuju da eksplicitno navedemo od kojih biblioteka naša skripta zavisi, pa se kod izvršava tek nakon što se zavisnosti učitaju.
 
 
-## Ne čuvajte stanja u HTML-u
+## Ne čuvajte stanje aplikacije u HTML-u
+
+HTML je samo prikaz podataka (view). Često developeri upisuju podatke u data atribute, u innerHTML, u skrivena polja i slično. Stanja aplikacije treba čuvati u Javaskriptu, a kada korisnik inicira njihovu promenu, treba ih ažurirati u JS-u, i zatim ponovo renderovati HTML. Nikako obratno, jer to je zapravo anti-obrazac! (ažurirati HTML, pa pomoću JS-a saznavati stanje aplikacije). HTML je view i nikako ne treba da služi kao model ili kontroler (vidi [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)).
