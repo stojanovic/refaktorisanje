@@ -17,7 +17,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Izdvojte event listenere u poseban odeljak](#izdvojte-event-listenere-u-poseban-odeljak)
   * [Izdvojte funkcije u poseban odeljak](#izdvojte-funkcije-u-poseban-odeljak)
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
-  * [Imenujte anonimne parametarske objekte](#imenujte-anonimne-parametarske-objekte)
+  * [Imenujte anonimne objekte](#imenujte-anonimne-objekte)
   * [Organizujte varijable u objekte](#organizujte-varijable-u-objekte)
   * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
@@ -243,9 +243,9 @@ Imenovanje anonimnih funkcija je često korisno, ali ne uvek. Funkcije nekada tr
 Gornji kod možemo još dodatno refaktorisati imenovanjem anonimnog parametarskog objekta, o čemu u narednom odeljku.
 
 
-## Imenujte anonimne parametarske objekte
+## Imenujte anonimne objekte
 
-Navedena skripta za slanje formulara ima jedan anonimni objekat, koji nije toliko upadljiv:
+Gornja skripta za slanje formulara ima jedan anonimni parametarski objekat, koji nije toliko upadljiv:
 
 ```javascript
 function formSubmit (e) {
