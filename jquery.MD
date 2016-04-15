@@ -13,9 +13,9 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
 ## Sadržaj
   * [Podelite kod u zasebne fajlove](#podelite-kod-u-zasebne-fajlove)
   * [Naznačite sktrukturu stranice](#naznačite-sktrukturu-stranice)
-  * [Izdvojte varijable u poseban odeljak](#izdvojte-varijable-u-poseban-odeljak)
-  * [Izdvojte event listenere u poseban odeljak](#izdvojte-event-listenere-u-poseban-odeljak)
-  * [Izdvojte funkcije u poseban odeljak](#izdvojte-funkcije-u-poseban-odeljak)
+  * [Grupišite varijable u poseban odeljak](#grupišite-varijable-u-poseban-odeljak)
+  * [Grupišite event listenere u poseban odeljak](#grupišite-event-listenere-u-poseban-odeljak)
+  * [Grupišite funkcije u poseban odeljak](#grupišite-funkcije-u-poseban-odeljak)
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne objekte](#imenujte-anonimne-objekte)
   * [Povežite varijable u objekte](#povežite-varijable-u-objekte)
@@ -53,7 +53,7 @@ Da biste stekli širu sliku, zamislite gornji deo fajla kao kontrolnu tablu, gde
 <img src='https://upload.wikimedia.org/wikipedia/commons/0/09/Plc_control_panel.JPG' width='400'>
 
 
-## Izdvojte varijable u poseban odeljak
+## Grupišite varijable u poseban odeljak
 
 Pretražite čitav fajl (ključna reč `var`) i gde god nađete varijablu u globalnom prostoru, premestite je u uvodnu sekciju. Izuzetak su varijable koje zavise od DOM-a, njih smestite unutar `document ready` eventa.
 
@@ -71,7 +71,7 @@ var MAX_SPEED = 256;
 ```
 
 
-## Izdvojte event listenere u poseban odeljak
+## Grupišite event listenere u poseban odeljak
 
 U jQuery-u, `document ready` je glavni slušalac događaja, koji se okida tek kada je HTML učitan (bez slika i svega ostalog što se učitava naknadno). On nam jemči da će u trenutku izvršenja koda biti spremni svi elementi iz HTML-a.
 
@@ -147,7 +147,7 @@ $(document).on('click', '.book-description', function(){
 ```
 
 
-## Izdvojte funkcije u poseban odeljak
+## Grupišite funkcije u poseban odeljak
 
 Pretražite fajl i organizujte sve funkcije u poseban odeljak, koja se nalazi na dnu. Obavezno koristiti deklaracije funkcija, a ne funkcionalne izraze, jer je [razlika presudna](http://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip) (u drugom slučaju će pući aplikacija). Anonimne funkcije za sada ostavite gde jesu, ali neke od njih ćemo kasnije [imenovati](#imenujte-anonimne-funkcije). Sada naš odeljak sa funkcijama izgleda ovako:
 
