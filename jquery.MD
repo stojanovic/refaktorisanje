@@ -2,7 +2,7 @@
 ## Vodič za refaktorisanje Javaskript koda
 > Nivo: srednji - napredni
 
-***Ovaj vodić je namenjen organizovanju nasleđenog Javaskcript koda, na projekatima koji ne koriste ni jedan front-end framework. Vodič se ne bavi tehnikama optimizacije i kodnim stilom, već isključivo arhitekturom.***
+***Ovaj vodić je namenjen organizovanju nasleđenog Javaskript koda, na projekatima koji ne koriste ni jedan front-end framework. Vodič se ne bavi tehnikama optimizacije i kodnim stilom, već isključivo arhitekturom.***
 
 Ukoliko ste ikad radili kao Front-end developer, verovatno ste naišli na [ogroman jQuery fajl](bad-jquery-example.js) (obično `main.js`), koji su pisale generacije developera, ko je kako stigao. Novi developeri obično ubace svoje parče koda na dnu fajla, bez neke posebne logike. Takav fajl brzo naraste na par stotina (čak par hiljada) linija, pa je veoma teško izboriti se sa njim.
 
