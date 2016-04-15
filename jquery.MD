@@ -18,7 +18,7 @@ Srećom, postoje rutinski koraci koji će vam pomoći da sve to organizujete. Na
   * [Izdvojte funkcije u poseban odeljak](#izdvojte-funkcije-u-poseban-odeljak)
   * [Imenujte anonimne funkcije](#imenujte-anonimne-funkcije)
   * [Imenujte anonimne objekte](#imenujte-anonimne-objekte)
-  * [Organizujte varijable u objekte](#organizujte-varijable-u-objekte)
+  * [Povežite varijable u objekte](#povežite-varijable-u-objekte)
   * [Uklonite JavaScript iz HTML-a](#uklonite-javascript-iz-html-a)
   * [Izolujte globalni opseg](#izolujte-globalni-opseg)
   * [Učitavajte skripte asinhrono](#učitavajte-skripte-asinhrono)
@@ -323,7 +323,7 @@ $(window).load(function() {
 Ovako smo umesto pukog kopi-pejstovanja, preuzeti kod prilagodili strukturi našeg projekta.
 
 
-## Organizujte varijable u objekte
+## Povežite varijable u objekte
 
 <img src='http://eloquentjavascript.net/img/object.jpg' width='400'>
 
