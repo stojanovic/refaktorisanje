@@ -1,4 +1,4 @@
-var layer_counter = 0; 
+var layer_counter = 0;
 var layer_id = 0;
 var cnt = 0;
 
@@ -22,16 +22,16 @@ var gcdf = {
 			   "Resources: "+this.resources.length+" Nodes";
 	}
 }
- 
+
 var dump;
 
-$R = $('div.resources');	
+$R = $('div.resources');
 
 $this = { // for use for global scope;
 
 	file_name : false,
 	files : null
-	
+
 };
 
 $($(this)).click(function(argument) {
@@ -48,8 +48,8 @@ var selected_folder = "";
 var game;
 var backStack = [];
 function Sprite(data){
-    for (var key in data) 
-        this[key] = data[key]; 
+    for (var key in data)
+        this[key] = data[key];
 }
 var fileCache = [];
 var modified = false;
@@ -103,7 +103,7 @@ $(document).ready(function () {
 				modified = true;
 			}
 		}).resizable({
-			snap: ".layer", 
+			snap: ".layer",
 			handles: "all",
 			zIndex: 0,
 			stop: function( event, ui ){
@@ -117,7 +117,7 @@ $(document).ready(function () {
 			}
 		});
 	}).on("click", '.layer', function(){
-	
+
 		//layer_selected = $(this);
 
 		//Asume that something has a selected layer.
@@ -130,11 +130,11 @@ $(document).ready(function () {
 	$("#live_resources").on("mouseover", '.draggable', function(event){
 		$(this).draggable({
 			cancel: "div.placeholder, input, button",
-			containment: "document", 
+			containment: "document",
 			scroll: false
 		});
 	});
-	
+
 
 	x = 0;
 	//$('#menubar li a').each(function(){
@@ -143,7 +143,7 @@ $(document).ready(function () {
 
 	var tabCounter = 2;
 
-	/*$('#container_id').fileTree({
+	$('#container_id').fileTree({
     	root: '../ckge/',
     	script: './filetree/jqueryFileTree.php',
     	expandSpeed: 300,
@@ -159,13 +159,13 @@ $(document).ready(function () {
     	var tabTitle = efile+' '+$R.find('.close-tab').outerHTML(),
         	tabContent = $R.find('.tabftmp').attr('src','textedit/editor.php?file=ckge/'+file).addClass("tabs-" + tabCounter).outerHTML(), //<iframe src="http://localhost/game/textedit/editor.php?file='.file.'"></iframe>',
         	tabTemplate = $R.find('.tabtemp').clone();
-        
+
 		var	id = "tabs-" + tabCounter,
 			li = $(tabTemplate);
 			$(tabTemplate).find('a').attr('href','#'+id).append(tabTitle);
 			//$(li).hide();
 
-        tabs.find( ".ui-tabs-nav" ).append(li); 
+        tabs.find( ".ui-tabs-nav" ).append(li);
         tabs.append('<div id="'+id+'">' +tabContent+ '</div>');
 		tabs.tabs("refresh");
 
@@ -180,33 +180,33 @@ $(document).ready(function () {
         	$(this).remove();
         	tabs.tabs("refresh");
         });
-	});*/
+	});
 
 	/*$('.layers').css({ss
 		'top': top,
 		'left': left = $(document).width() - $('.layers').width() - 25,
 	});
-	
+
 	$('.materials').css({
 		'top': top + 30 + $('.layers').height(),
 		'left': left,
 	});*/
-	
-	
+
+
 	//$(".materials_browser").resizable({ minHeight: 132, minWidth: 126 })
-		
+
 
 	$(".draggable").draggable({
 		cancel: "div#scrolling, .content",
-		containment: "document" 
+		containment: "document"
 	});
 
 	$('.resizable').resizable({
 		handles: "all",
 		zIndex: 0,
-		containment: "document" 
+		containment: "document"
 	});
-	
+
 
 	// $("#game_preview, #code_editor").draggable({
 	// 	start: function(event, ui) {  $('.iframe_fix').css('display','block');  },
@@ -240,16 +240,16 @@ $(document).ready(function () {
 		e.stopPropagation();
 
 	});
-	
+
 	$("#tabs").tabs();
-	$(document).on('dragstart', "img", function(event) { 
-		event.preventDefault(); 
+	$(document).on('dragstart', "img", function(event) {
+		event.preventDefault();
 	});
 
 	$(window).bind('beforeunload', function(){
   		return 'Changes have not been saved!';
 	});
-	
+
 	// $(".draglayer").draggable();
 	// tabs = $("#tabs").tabs();
 }); // Document ready // Main Meniu
@@ -270,7 +270,7 @@ $("#new_game form").on("submit",function(e){
 			$("#new_game").fadeOut("fast",function(){
 				$('.fader').fadeOut("fast");
 				$("#new_game input[name=name]").val("");
-				if(obj.children == undefined ) 
+				if(obj.children == undefined )
 					obj.children = [];
 				obj.children.unshift(result);
 				getGames(obj);
@@ -293,18 +293,18 @@ $("#main").on("click", function(e){
 
 
 $("#main #canvas").on("dblclick", ".layer", function(e){
-	
+
 	$(this).addClass("selected");
 	e.stopPropagation();
 });
 
 
-$('.new_folder').click(function(){ 
+$('.new_folder').click(function(){
 
 	dialog("Create new folder","Enter your folder name","_input", {
-	    
+
 	    'OK' : function(){
-	    	
+
 	        var reply = $('.dialog_input').val();
 
 	        if( reply != null && reply != "" ){
@@ -331,12 +331,12 @@ $('.new_folder').click(function(){
 }); // Create a new folder group
 
 
-$('.new_layer').click(function(){ 
+$('.new_layer').click(function(){
 
 	dialog("Create new layer","Enter your layer name","_input", {
-	    
+
 		'OK' : function(){
-	    	
+
 			var reply = $('.dialog_input').val();
 
 			if( reply != null && reply != "" ){
@@ -369,7 +369,7 @@ $('#layer_groups').on('div','click', function(event){
 	//$('.selected').removeClass('selected');
 
 	$(this).addClass('selected');
-	
+
 	console.log(this);
 });
 
@@ -377,9 +377,9 @@ $('#filebrowser').on('click','li.folder',function(e){
 
     var index = $(this).attr('index');
     var html = "";
-    
+
     if( $(this).hasClass('back') ) {
-      
+
       // Set the to the old list.
       game = backStack.pop();
       $this.files = game;
@@ -409,15 +409,15 @@ $('#filebrowser').on('click','li.folder',function(e){
 
 
 /* Fade in any window with correct class "open"
-   (optional) provide "fade" to have fader 
-   Eg: class="open test_window fader" */ 
+   (optional) provide "fade" to have fader
+   Eg: class="open test_window fader" */
 $("button.open, a.open").on("click", function() {
-	
+
 	var name = $(this).attr('class');
 		name = name.split(' ');
 
 	$('#'+name[1]).center().css('z-index',z_index++).fadeIn('fast');
-		
+
 	if( name[2] == "fade" ){
 		$('.fader.panels').css('z-index',z_index-2).fadeIn('fast');
 	}
@@ -432,11 +432,11 @@ $('.list_of_games').on("click",".game",function(){
 $('.list_of_games').on("dblclick",".game",function(){
 
 	var index = $(this).attr('id');
-	
+
 	game = obj.children[index];
-	if(game.children === undefined) 
+	if(game.children === undefined)
 		game.children = [];
-	
+
 	$('#filebrowser').append(inside(game.children));
 	getImages(game.children);
 	getScripts(game.children);
@@ -451,13 +451,13 @@ $('.list_of_games').on("dblclick",".game",function(){
 }); // Show main panel of double click of game.
 
 $("#canvas").on('mousemove', function(e){
-	
+
 	if (e.ctrlKey){
 
 		var img = $(this).find('.loltest')
-		
+
 		if( img.length == 0 ){
-			
+
 			$('#material_placeholder img').clone()
 				.addClass("loltest")
 				.hide()
@@ -505,7 +505,7 @@ $(document).on('dblclick', '#canvas', function(e){
 	// 	$('.resources .layer').clone(true,true).addClass((layer_id++).toString()).css({
 	// 		'background-image': 'url('+image_src+')',
 	// 		'background-repeat': 'repeat',
-	// 		'width': material.width(), 
+	// 		'width': material.width(),
 	// 		'height': material.height(),
 	// 		'left':  $('#canvas').scrollLeft() + e.offsetX - (material.width()/2),
 	// 		'top':  $('#canvas').scrollTop() + e.offsetY - (material.height()/2)
@@ -544,17 +544,17 @@ $(document).on('dblclick', '#canvas', function(e){
 	modified = true;
 	e.stopPropagation();
 
-	
+
 });  // Create a layer from a double click action 2.0
 
 $('#code_sidebar').on('click','li.default',function(){
 
-	$(".selected").removeClass("selected"); 
+	$(".selected").removeClass("selected");
     $(this).addClass("selected");
 
 	var id = $(this).attr("data-id")
 	var parent = $(this);
-	
+
 	var data = fileCache.getById(id);
 	if( data !== undefined )
 		return editor.setValue(data["data"]);
@@ -575,7 +575,7 @@ $('#code_sidebar').on('click','li:not(.default, .selected, .loading)',function()
 	var pre_id = $(".selected").attr("data-id");
 	fileCache.getById(id).data = editor.getValue();
 
-	$(".selected").removeClass("selected"); 
+	$(".selected").removeClass("selected");
     $(this).addClass("selected");
 
 	var id = $(this).attr("data-id")
@@ -583,7 +583,7 @@ $('#code_sidebar').on('click','li:not(.default, .selected, .loading)',function()
 	var parent = $(this);
 
 	var data = fileCache.getById(id);
-	if( data !== undefined ){	
+	if( data !== undefined ){
 		if( parent.hasClass('unsaved') ){
 			editor.setValue(data["data"]);
 		} else {
@@ -607,7 +607,7 @@ $('#code_sidebar').on('click','li:not(.default, .selected, .loading)',function()
 
 $('.new_entity').on('click',function(){
 	if($(this).hasClass("loading") == false){
-		
+
 		var parent = $(this).addClass('loading');
 		var name = $('#enitity_name').val();
 		var type = $('#enitity_type').val();
@@ -699,12 +699,12 @@ function fun(){
 $('#layers').on('dblclick', '.header', function(event){
 	//console.log( $(this).parentsUntil('.folder').html() );
 	$(this).closest('.folder').children('.content').slideToggle('fast');
-	$(this).children('.foldersizing').toggle(); 
+	$(this).children('.foldersizing').toggle();
 });
 
 
 $('.dropdown_logo').click(function(){
-	
+
 	if( $('.logo_menu_list').css('display') != "none" ){
 		$('.logo_menu_list').slideUp('fast');
 		$(this).attr('src','images/dropdown.gif');
@@ -718,10 +718,10 @@ $('.dropdown_logo').click(function(){
 //////// DEFO NEED ////////////////////////
 
 $('div.titlebar').on('click', ".close", function(){
-	
+
 	var $panel = $(this).parent().parent();
 	$panel.fadeOut('fast');
-	
+
 	$('.fader').fadeOut('fast'); // fades out the bg
 
 	/*if( $obj.hasClass('permanent') ) {
@@ -731,13 +731,13 @@ $('div.titlebar').on('click', ".close", function(){
 
 	//var link = $(this).parent().parent().attr('class');
 	//	link = link.split(" ");
-	
+
 	//$('.'+link).fadeOut('fast'); // fades out the box
 	//$('#fader').fadeOut('fast'); // fades out the bg
-	
+
 	//if(link)
 
-	//$(".menu [link='"+link+"']").removeClass('visable');	
+	//$(".menu [link='"+link+"']").removeClass('visable');
 }); // Close any specific open dragable box v2.0
 
 $('.titlebar .sizing').on('click',function(){
@@ -746,29 +746,29 @@ $('.titlebar .sizing').on('click',function(){
 }); // Minimize/Maximise a window v2.0
 
 $('.panel.draggable').mousedown(function(){
-	
+
 	$(this).css('z-index',z_index);
 	z_index++; //update it by 1;
 	return true;
 }); // Update the z-index of a dragable box v3.0
 
 $('.hide_all').click(function(){
-	
+
 	if( !$(this).hasClass('visable') ){
-		
+
 		$('.window li a').each(function(index, element) {
-			
+
 			var link = $(element).attr('link');
 			$('.'+link).fadeOut('fast');
 			$('.window [link="'+link+'"]').removeClass('visable');
-			
+
 		});
-		
+
 	}
 }); // Hide all windows on screen
 
 $(".material_browser").on('click',function(){
-		
+
 		$('.materials_browser').center().fadeIn('fast');
 }); // Show the materials window in center on button click v2.0
 
@@ -783,20 +783,20 @@ $('#canvas').on("click", '.remove_layer', function(e){
 });  // Remove a specific layer from a group V2.0
 
 
-$("select#layer_groups").change(function (){ 
-	
+$("select#layer_groups").change(function (){
+
 	group_selected = []; // Empty out an array *fixes mutly select bug*
-	
+
 	$("select#layer_groups option:selected").each(function(index,value){
-	
+
 		group_selected[index] = $(value);
-		
+
 	});
 
 }); // Select the correct layer group(s)
 
 
-$('#resources').on('click','img',function(){ 
+$('#resources').on('click','img',function(){
 
 	var image_src = $(this).attr('src');
 	var link = $(this).attr('data-img-id');
@@ -809,7 +809,7 @@ $('#resources').on('click','img',function(){
 		.attr('data-img-id',link)
 		.attr('data-real-height',height)
 		.attr('data-real-width',width);
-		
+
 }); // Insert a layer into a materials dialog
 
 
@@ -819,37 +819,37 @@ $('#resources').on('click','img',function(){
 $('.material_add').click(function(){
 	var material = $('.material_img');
 	var image_src = material.attr('src');
-		
+
 	$( group_selected ).each(function(index,value){
-			
+
 		$('.resources .layer').clone(true,true).addClass((layer_id++).toString()).css({
 			'background-image': 'url('+image_src+')',
 			'background-repeat': 'repeat',
-			'width': material.width(), 
+			'width': material.width(),
 			'height': material.height()
 		}).appendTo('#canvas .layers_group.' + $(value).html());
-		
-	});	
-	
+
+	});
+
 }); // Create a layer in main screen from material
 
 
 
-$('.hide_layer_group').click(function(){  
+$('.hide_layer_group').click(function(){
 
 	$( group_selected ).each(function(index,value){
-		
+
 		$('#canvas .layers_group.' + $(value).html()).hide('slow');
-		
+
 	});
 }); // Hide one or more layer groups
 
 $('.show_layer_group').click(function(){ // hide the perent layer
 
 	$( group_selected ).each(function(index,value){
-		
+
 		$('#canvas .layers_group.' + $(value).html()).show('slow');
-		
+
 	});
 }); // Show one ore more layer groups
 
@@ -858,44 +858,44 @@ $(".del_layer_group").click(function(){
 	$( group_selected ).each(function(index,value){
 
 		var number_of_children = $('#canvas .layers_group.' + $(value).html() + ' div').length;
-		
+
 		if( number_of_children > 0 ){ // If one or more exist then promt user
-			
+
 			if(confirm( $(value).html()+" layer has "+number_of_children+" children layer(s). Are you sure you wan't to delete it?")){
-				
+
 				$('select .layers_group.' + $(value).html()).remove();
 				$('#canvas .layers_group.' + $(value).html()).remove();
 				$(".aplha").val(''); // Update the alpha;
-								
+
 			}
-			
+
 		} else { // no layers whiing a group, just delete it.
-			
+
 			$('select .layers_group.' + $(value).html()).remove();
 			$('#canvas .layers_group.' + $(value).html()).remove();
 			$(".aplha").val(''); // Update the alpha
-		
+
 		}
-		
-	});	
+
+	});
 }); // Delete one or more layer groups
 
 $("input.aplha").click(function() {
-	
+
 	if( group_selected.length > 0 ){
-		
+
 		var opacity = $(this).val();
-		
+
 		$( group_selected ).each(function(index,value){
-			
+
 			console.log($(value).html());
-			
+
 			$('#canvas .layers_group.'+ $(value).html()).css({ opacity: opacity/100 });
-			
+
 		});
-	
-	} 
-});  // Change the alpha of the layer groups 
+
+	}
+});  // Change the alpha of the layer groups
 
 
 
@@ -903,120 +903,120 @@ $('#save_as #scrolling table').on('click','tr',function(){
 	$('#save_as .input_file_name').val( $(this).find('.a').html() );
 	$('#save_as #scrolling table tr').removeClass('selected');
 	$(this).addClass('selected');
-	
+
 }); // Replace the file name of save as dialog
 
 $('#open #scrolling table').on('click','tr',function(){
-	
+
 	$('#open .input_file_name').val( $(this).find('.a').html() );
 	$('#open #scrolling table tr').removeClass('selected');
 	$(this).addClass('selected');
-	
+
 }); // Replace the file name of open dialog
 
-/*$(".layer").live('dblclick',function(){
-	
+$(".layer").live('dblclick',function(){
+
 	//do some when double clicked,
 	var reply = prompt("width & height", parseInt($(this).css('width')) +"|"+ parseInt($(this).css('height')) );
 	var size = reply.split('|');
-	
+
 	$(this).css('width' , size[0]);
 	$(this).css('height', size[1]);
 	$(this).css('overflow', 'hidden');
-	
+
 	//alert(reply[0]+" - "+reply[1]);
-	
-}); // Double click a layer*/
+
+}); // Double click a layer
 
 
 
-/*$(".layer").on("click", function(){
-	
+$(".layer").on("click", function(){
+
 	layer_selected = $(this);
-	
+
 	$(".layer_propertie.name").val( "Top: "+parseInt($(this).css('top')) +", Left:"+parseInt($(this).css('left')) );
-	
+
 	if( $(this).hasClass("collidable") ) {
-		
+
 		$(".layer_propertie.collidable").attr("checked","checked");
-	
+
 	}else $(".layer_propertie.collidable").removeAttr("checked");
-	
+
 	$(".layer_propertie.width").val( $(this).width() );
 	$(".layer_propertie.height").val( $(this).height() );
-	
+
 	//alert(10);
-	
-}); */ // Click on a layer*/
+
+}); // Click on a layer
 
 $('.tools img').click( function(){
-	
+
 	$('.tools img').each(function(index, element) {
-		
+
 		$(element).removeClass('tool_selected');
-		
+
 	});
-	
+
 	$(this).addClass('tool_selected');
-	
+
 });
 
 $('.btn_export_code').click(function(){
 
 	var output = $('div.export select').attr('value'); //raw | game
-	
+
 	switch(output){
-	
+
 		case 'raw': $('div.export textarea').val( output_level_data() );
 			break;
-			
+
 		case 'raw_2' : $('div.export textarea').val( output_tidy_level_data() );
 			break;
-			
+
 		case 'raw_3' : $('div.export textarea').val( beautify_level_data($('div.export textarea').val()) );
 			break;
-			
+
 		case 'raw_4' : $('div.export textarea').val( uglify_level_data($('div.export textarea').val()) );
 			break;
-			
+
 		case 'game': $('div.export textarea').val( output_game_code() );
 			break;
-		
+
 	}
 
 	if( $('div.export textarea').html() == "" ){
 		 $('div.export textarea').html("Nothing was outputted");
 	}
-	
+
 }); // Export Actual Code
 
 
-/*$('#canvas .droppable').droppable({drop: 
+/*$('#canvas .droppable').droppable({drop:
 	function( event, ui ) {
-			
+
 		var id   = ui.draggable.attr('id');
-			
+
 		var div = $('.update_container').clone();
 		div.find('.in_name').val( ui.draggable.find('div').html() );
 		div.find('.in_desc').val( ui.draggable.attr('description') );
 		div.attr('class', 'uc_1 hidden');
-			
+
 		$(this).html( div ).attr('class','asd');
-		$('.uc_1').slideDown('fast'); 
-			
+		$('.uc_1').slideDown('fast');
+
 	}
 }); *///????????????????
 
 $(".layer_propertie").click(function(){
-	
+
 	if( $(".layer_propertie.collidable").attr('checked') ) {
-		
+
 		$(layer_selected).addClass("collidable");
-		
+
 	}
-	
+
 	else $(layer_selected).removeClass("collidable");
-	
+
 }); // Layer Properties settings
 
 
@@ -1033,92 +1033,92 @@ $('#menubar li')
 	  	}
 	)
 	.click(function(){
-		$(this).find('ul').fadeOut(0);	
+		$(this).find('ul').fadeOut(0);
 });
 
 
 $(".setting").click(function(){
-	
+
 	var setting = $(this).attr('name');
 	var boolean = ($(this).attr('checked'))? 1 : 0 ;
 	var value = $(this).val();
-	
+
 	switch(setting){
-		
+
 		case 'disable':
 			if(boolean) $('.live_draggable').liveDraggable({ disabled: true });
 			else $('.live_draggable').liveDraggable({ disabled: false });
 			console.log(setting+" "+boolean+" "+value);
 			break;
-	
+
 		case 'snap':
 			if(boolean) $('.live_draggable').liveDraggable({snap: true});
 			else $('.live_draggable').liveDraggable({snap: false});
 			console.log(setting+" "+boolean+" "+value);
 			break;
-		
+
 		case 'grid':
 			$('.live_draggable').liveDraggable({grid: value});
 			console.log(setting+" "+boolean+" "+value);
-			break;	
-			
+			break;
+
 		case 'snapmode':
 			$('.live_draggable').liveDraggable({snapMode: value});
 			console.log(setting+" "+boolean+" "+value);
-			break;	
-			
+			break;
+
 		case 'snaptolerance':
 			$('.live_draggable').liveDraggable({snapTolerance: value});
 			console.log(setting+" "+boolean+" "+value);
-			break;	
-			
+			break;
+
 		case 'delay':
 			$('.live_draggable').liveDraggable({delay: value});
 			console.log(setting+" "+boolean+" "+value);
 			break;
-			
+
 	}
-	
+
 });  // Setting options varables
 
 
-function  beautify_level_data(output) {	
+function  beautify_level_data(output) {
 
 	data = output.split('|');
 	layers = data[0].split(',');
 	resources = data[1].split(',');
-	links = data[2].split(',');	
-	
+	links = data[2].split(',');
+
 	var test = "";
 	var length = layers.length;
 	for ( var i=0; i<length; ++i ){
 		test += layers[i]+",\n";
 	}
-	
+
 	test = test.slice(0, -2) + '|\n\n';
-	
+
 	var length = resources.length;
 	for ( var i=0; i<length; ++i ){
 		test += resources[i]+",\n";
 	}
-	
+
 	test = test.slice(0, -2) + '|\n\n';
-	
+
 	var length = links.length;
 	for ( var i=0; i<length; ++i ){
 		test += links[i]+",\n";
 	}
-	
+
 	test = test.slice(0, -2);
-	
+
 	return test;
-	
+
 }
 
 function uglify_level_data(output) {
-	
+
 	return output.replace(/(\r\n|\n|\r)/gm,"");
-	
+
 }
 
 $(document).keydown(function(e){
@@ -1127,43 +1127,43 @@ $(document).keydown(function(e){
 	var selected = layer_selected;
 
 	if(selected != 0){
-	 
+
 	  switch(e.keyCode){
 		case 65: //this is left! (a)aa
-		  
+
 			$(selected).css('left',parseInt($(selected).css('left'))-1);
-			
+
 		  break;
 		case 87: //this is up! (w)
-		 
+
 			$(selected).css('top',parseInt($(selected).css('top'))-1);
-		  
+
 		  break;
 		case 68: //this is right (d)
-		
+
 			$(selected).css('left',parseInt($(selected).css('left'))+1);
-		  
+
 		  break;
-		
+
 		case 83: //this is down! (s)
-		
+
 			$(selected).css('top',parseInt($(selected).css('top'))+1);
-		 
+
 		  break;
-		  
+
 		case 67: //dublicate object
-			
+
 			console.log('.'+$("select option:selected").val());
-			
+
 			$(selected).clone().appendTo( '#canvas .group#'+$("select option:selected").val() );
-		 
+
 		 break;
-		 
+
 	  }
-	  
-	   
+
+
 	  console.log($(selected).css('left'),(selected).css('top'));
-	  
+
 	}
 
 });
@@ -1258,7 +1258,7 @@ function getScript(data){
 function getImage(data){
 
 	if( (/image/i).test(data.mimeType) ){
-		
+
 		getMeta(data.id,function(meta){
 			$R.find(".resource").clone()
 				.find("img")
@@ -1273,7 +1273,7 @@ function getImage(data){
 		});
 
 	}
-	
+
 }
 
 
@@ -1298,34 +1298,34 @@ for (i=0;i<len;i++) {
 return temp;
 }
 
-// var timeout;
-// var saving = false;
-// var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-// 	lineNumbers: true,
-// 	matchBrackets: true,
-// 	onChange: function(cm){
-// 		if(saving) return true;
-// 		$('#modified').fadeIn('slow');
-// 		clearTimeout(timeout);
-// 		timeout = setTimeout(function(){ 
-// 			saving = true;
-// 			$('#modified').fadeOut('fast', function(){
-// 				$.ajax({
-// 					type: "POST",
-// 					url: "./../save_edited_file.php",
-// 					data: { file:"<?php echo $_GET['file']?>" ,data: cm.getValue() }
-// 				}).done(function(html) {
-// 					console.log(html);
-// 					$('#saved').fadeIn('slow').delay(300).fadeOut('fast', function(){saving = false});
-// 				});
-// 			});
-// 		}, 2000);
-// 	}
-// });
+var timeout;
+var saving = false;
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+	lineNumbers: true,
+	matchBrackets: true,
+	onChange: function(cm){
+		if(saving) return true;
+		$('#modified').fadeIn('slow');
+		clearTimeout(timeout);
+		timeout = setTimeout(function(){
+			saving = true;
+			$('#modified').fadeOut('fast', function(){
+				$.ajax({
+					type: "POST",
+					url: "./../save_edited_file.php",
+					data: { file:"<?php echo $_GET['file']?>" ,data: cm.getValue() }
+				}).done(function(html) {
+					console.log(html);
+					$('#saved').fadeIn('slow').delay(300).fadeOut('fast', function(){saving = false});
+				});
+			});
+		}, 2000);
+	}
+});
 
 
 
-(function ($) { 
+(function ($) {
 	$.fn.getimage = function () {
 		image = $(this).css('background-image');
 		image = image.split('/');
@@ -1335,22 +1335,22 @@ return temp;
 
 
 Array.prototype.getById = function(id) {
-	for(i in this) 
+	for(i in this)
 		if ( this[i].id == id ) return this[i];
 }
 
 Array.prototype.updateById = function(id,data) {
-	for(i in this) 
+	for(i in this)
 		if ( this[i].id == id ) return this[i]=data;
 }
 
 Array.prototype.getByName = function(name) {
-	for(i in this) 
+	for(i in this)
 		if ( this[i].name == name ) return this[i];
 }
 
 Array.prototype.removeById = function(id) {
-	for(i in this) 
+	for(i in this)
 		if ( this[i].id == id ) return this.splice(i,1);
 }
 
@@ -1408,12 +1408,12 @@ $('div#dropfile').on('drop',function(e){
 								theImg.src = evt.target.result;
 							};
 						}(img));
-					reader.readAsDataURL(files[index]);					
-				
+					reader.readAsDataURL(files[index]);
+
 				} else { info.find("img.inf_prev")[0].src = ""; }
 
 				info.fadeIn("fast");
-				
+
 				insertFile(files[index],game.id,function(result){
 				    console.log(result);
 					game.children.unshift(result);
@@ -1422,7 +1422,7 @@ $('div#dropfile').on('drop',function(e){
 					if(files[index]) store();
 					else info.fadeOut("fast");
 				});
-				
+
     		};
 
     		store();
@@ -1434,7 +1434,7 @@ $('div#dropfile').on('drop',function(e){
 			// var reader = new FileReader();
 			// 	reader.readAsDataURL(files[0]);
    			//console.log(reader);
-        }   
+        }
     }
 });
 
@@ -1450,7 +1450,7 @@ function load_entities(){
 
 	for(i=0; i<ent_len; i++){
 
-	  //if( /*typeof window[key] === "function" &&*/ 
+	  //if( /*typeof window[key] === "function" &&*/
 	  	//window[key] instanceof Entity){
 
 
@@ -1488,7 +1488,7 @@ function load_entities(){
 
 
 // thank you who ever live dragalbe elements
-/*(function ($) { 
+(function ($) {
 	$.fn.liveDraggable = function (opts) {
 		this.live("mouseover", function() {
 			//if (!$(this).data("init")) {
@@ -1509,7 +1509,7 @@ function load_entities(){
 }(jQuery));
 
 /// write this my self :)
-(function ($) { 
+(function ($) {
 	$.fn.getimage = function () {
 		image = $(this).css('background-image');
 		image = image.split('/');
@@ -1521,30 +1521,29 @@ function load_entities(){
 
 
 jQuery.fn.flashText = function () {
-	
+
 	this.css('color','#7aacff');
 	this.fadeOut('fast').fadeIn('slow');
 	this.fadeOut('fast').fadeIn('slow').queue(function () {
 		$(this).css('color','#808080');
     	$(this).dequeue();
   	});
-		
-}; */
+
+};
 
 
+(function(a){function f(b,c,d){var e=a.ui.resizable.prototype[b];a.ui.resizable.prototype[b]=function(){if(d)d.apply(this,arguments);e.apply(this,arguments);if(c)c.apply(this,arguments)}}function e(a){return parseInt(a.css("margin-top"),10)||0}function d(a){return parseInt(a.css("margin-left"),10)||0}function c(a){return a.sort(function(a,b){return!a?1:!b?-1:Math.abs(a)-Math.abs(b)})[0]}function b(a,b,c){return Math.abs(a)<c?-a:Math.abs(b)<c?-b:0}a.extend(a.ui.resizable.prototype.options,{snapTolerance:20,snapMode:"both"});a.ui.plugin.add("resizable","snap",{start:function(){var b=a(this),c=b.data("resizable"),f=c.options.snap;c.ow=c.helper.outerWidth()-c.size.width;c.oh=c.helper.outerHeight()-c.size.height;c.lm=d(b);c.tm=e(b);c.coords=[];a(typeof f=="string"?f:":data(resizable)").each(function(){if(this==c.element[0]||this==c.helper[0])return;var b=a(this),f=b.position(),g=f.left+d(b),h=f.top+e(b);c.coords.push({l:g,t:h,r:g+b.outerWidth(),b:h+b.outerHeight()})})},resize:function(){var d=[],e=[],f=[],g=[],h=a(this).data("resizable"),i=h.axis.split(""),j=h.options.snapTolerance,k=h.options.snapMode,l=h.position.left+h.lm,m=l-j,n=h.position.top+h.tm,o=n-j,p=l+h.size.width+h.ow,q=p+j,r=n+h.size.height+h.oh,s=r+j;a.each(h.coords,function(){var c=this,h=Math.min(q,c.r)-Math.max(m,c.l),t=Math.min(s,c.b)-Math.max(o,c.t);if(h<0||t<0)return;a.each(i,function(a,i){if(k=="outer"){switch(i){case"w":case"e":if(h>j*2)return;break;case"n":case"s":if(t>j*2)return}}else if(k=="inner"){switch(i){case"w":case"e":if(h<j*2)return;break;case"n":case"s":if(t<j*2)return}}switch(i){case"w":d.push(b(l-c.l,l-c.r,j));break;case"n":e.push(b(n-c.t,n-c.b,j));break;case"e":f.push(b(p-c.l,p-c.r,j));break;case"s":g.push(b(r-c.t,r-c.b,j))}})});if(g.length)h.size.height+=c(g);if(f.length)h.size.width+=c(f);if(d.length){var t=c(d);h.position.left+=t;h.size.width-=t}if(e.length){var t=c(e);h.position.top+=t;h.size.height-=t}}});f("_mouseStop",null,function(){if(this._helper){this.position={left:parseInt(this.helper.css("left"),10)||.1,top:parseInt(this.helper.css("top"),10)||.1};this.size={width:this.helper.outerWidth(),height:this.helper.outerHeight()}}});f("_mouseStart",function(){if(this._helper){this.size={width:this.size.width-(this.helper.outerWidth()-this.helper.width()),height:this.size.height-(this.helper.outerHeight()-this.helper.height())};this.originalSize={width:this.size.width,height:this.size.height}}});f("_renderProxy",function(){if(this._helper){this.helper.css({left:this.elementOffset.left,top:this.elementOffset.top,width:this.element.outerWidth(),height:this.element.outerHeight()})}});var g=a.ui.resizable.prototype.plugins.resize;a.each(g,function(a,b){if(b[0]=="ghost"){g.splice(a,1);return false}});a.each(a.ui.resizable.prototype.plugins.start,function(b,c){if(c[0]=="ghost"){var d=c[1];c[1]=function(){d.apply(this,arguments);a(this).data("resizable").ghost.css({width:"100%",height:"100%"})};return false}})})(jQuery);
 
-//(function(a){function f(b,c,d){var e=a.ui.resizable.prototype[b];a.ui.resizable.prototype[b]=function(){if(d)d.apply(this,arguments);e.apply(this,arguments);if(c)c.apply(this,arguments)}}function e(a){return parseInt(a.css("margin-top"),10)||0}function d(a){return parseInt(a.css("margin-left"),10)||0}function c(a){return a.sort(function(a,b){return!a?1:!b?-1:Math.abs(a)-Math.abs(b)})[0]}function b(a,b,c){return Math.abs(a)<c?-a:Math.abs(b)<c?-b:0}a.extend(a.ui.resizable.prototype.options,{snapTolerance:20,snapMode:"both"});a.ui.plugin.add("resizable","snap",{start:function(){var b=a(this),c=b.data("resizable"),f=c.options.snap;c.ow=c.helper.outerWidth()-c.size.width;c.oh=c.helper.outerHeight()-c.size.height;c.lm=d(b);c.tm=e(b);c.coords=[];a(typeof f=="string"?f:":data(resizable)").each(function(){if(this==c.element[0]||this==c.helper[0])return;var b=a(this),f=b.position(),g=f.left+d(b),h=f.top+e(b);c.coords.push({l:g,t:h,r:g+b.outerWidth(),b:h+b.outerHeight()})})},resize:function(){var d=[],e=[],f=[],g=[],h=a(this).data("resizable"),i=h.axis.split(""),j=h.options.snapTolerance,k=h.options.snapMode,l=h.position.left+h.lm,m=l-j,n=h.position.top+h.tm,o=n-j,p=l+h.size.width+h.ow,q=p+j,r=n+h.size.height+h.oh,s=r+j;a.each(h.coords,function(){var c=this,h=Math.min(q,c.r)-Math.max(m,c.l),t=Math.min(s,c.b)-Math.max(o,c.t);if(h<0||t<0)return;a.each(i,function(a,i){if(k=="outer"){switch(i){case"w":case"e":if(h>j*2)return;break;case"n":case"s":if(t>j*2)return}}else if(k=="inner"){switch(i){case"w":case"e":if(h<j*2)return;break;case"n":case"s":if(t<j*2)return}}switch(i){case"w":d.push(b(l-c.l,l-c.r,j));break;case"n":e.push(b(n-c.t,n-c.b,j));break;case"e":f.push(b(p-c.l,p-c.r,j));break;case"s":g.push(b(r-c.t,r-c.b,j))}})});if(g.length)h.size.height+=c(g);if(f.length)h.size.width+=c(f);if(d.length){var t=c(d);h.position.left+=t;h.size.width-=t}if(e.length){var t=c(e);h.position.top+=t;h.size.height-=t}}});f("_mouseStop",null,function(){if(this._helper){this.position={left:parseInt(this.helper.css("left"),10)||.1,top:parseInt(this.helper.css("top"),10)||.1};this.size={width:this.helper.outerWidth(),height:this.helper.outerHeight()}}});f("_mouseStart",function(){if(this._helper){this.size={width:this.size.width-(this.helper.outerWidth()-this.helper.width()),height:this.size.height-(this.helper.outerHeight()-this.helper.height())};this.originalSize={width:this.size.width,height:this.size.height}}});f("_renderProxy",function(){if(this._helper){this.helper.css({left:this.elementOffset.left,top:this.elementOffset.top,width:this.element.outerWidth(),height:this.element.outerHeight()})}});var g=a.ui.resizable.prototype.plugins.resize;a.each(g,function(a,b){if(b[0]=="ghost"){g.splice(a,1);return false}});a.each(a.ui.resizable.prototype.plugins.start,function(b,c){if(c[0]=="ghost"){var d=c[1];c[1]=function(){d.apply(this,arguments);a(this).data("resizable").ghost.css({width:"100%",height:"100%"})};return false}})})(jQuery);
-
-/* Query.fn.outerHTML = function(s) {
+Query.fn.outerHTML = function(s) {
 	return s
     	? this.before(s).remove()
     	: jQuery("<p>").append(this.eq(0).clone()).html();
-};	
+};
 
 $('.live_draggable').liveDraggable({ snap: ".live_draggable", zIndex: 1});
 //$('.draggable').dr
 
-$('.live_resizable').liveResizable({ snap: true,  zIndex: 1, 
+$('.live_resizable').liveResizable({ snap: true,  zIndex: 1,
 	start: function(event, ui) { console.log(event,ui); },
 	handles: "all"
-});*/
+});
